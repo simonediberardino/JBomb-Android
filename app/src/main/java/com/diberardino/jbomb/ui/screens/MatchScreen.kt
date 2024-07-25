@@ -41,7 +41,7 @@ fun MatchScreen() {
             ) {
                 Column(
                     modifier = Modifier
-                        .weight(1f)
+                        .weight(0.35f)
                         .fillMaxHeight(),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -52,6 +52,7 @@ fun MatchScreen() {
                 // Game pitch centered in the available space
                 Box(
                     modifier = Modifier
+                        .weight(1f)
                         .fillMaxHeight()
                         .aspectRatio(14f / 11f)
                 ) {
@@ -61,7 +62,7 @@ fun MatchScreen() {
                 // Empty column on the right side
                 Column(
                     modifier = Modifier
-                        .weight(1f)
+                        .weight(0.35f)
                         .fillMaxHeight(),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
