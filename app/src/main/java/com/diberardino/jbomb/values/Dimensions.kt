@@ -8,6 +8,9 @@ object Dimensions {
     const val DEFAULT_PIXEL_UNIT = 6
     val PIXEL_UNIT: Int = Utility.px(DEFAULT_PIXEL_UNIT)
     val COMMON_DIVISOR = PIXEL_UNIT * 4
+    val DEFAULT_SIZE = COMMON_DIVISOR * 2
+    val GRID_SIZE: Int = COMMON_DIVISOR * 3
+
     val BLOCK_SIZE: Int get() {
         return matchPanelSize.width / 13
     }

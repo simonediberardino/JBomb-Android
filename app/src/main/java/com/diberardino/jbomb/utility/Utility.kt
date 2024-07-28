@@ -15,6 +15,17 @@ object Utility {
         return value.coerceAtLeast(min).coerceAtMost(max)
     }
 
+    private fun chooseRandom(chance: Int): Boolean {
+        var chance = chance
+        chance = 0.coerceAtLeast(chance)
+        chance = 100.coerceAtMost(chance)
+        return Math.random() * 100 <= chance
+    }
+
+
+    fun runPercentage(chance: Int, runnable: Runnable) {
+        if (chooseRandom(chance)) runnable.run()
+    }
 
     fun timePassed(time: Long): Long {
         return now() - time
@@ -47,5 +58,6 @@ object Utility {
     fun px(dim: Int): Int = px(dim.toDouble()).toInt()
 
     fun px(dim: Double): Double = dim * (screenSize.width / Dimensions.DEFAULT_SCREEN_SIZE.width)
+
 
 }
