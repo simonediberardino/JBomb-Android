@@ -1,14 +1,16 @@
-package com.diberardino.jbomb.domain.world.domain.items
+package com.diberardino.jbomb.domain.world.domain.entity.items
 
-import game.JBomb
+import android.util.Log
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.game.UpdateCurrentAvailableItemsEvent
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
-import game.network.events.forward.UpdateInfoEventForwarder
-import game.utils.Utility
-import game.utils.dev.Log
-import game.utils.file_system.Paths.entitiesFolder
-import game.utils.time.now
+import com.diberardino.jbomb.domain.world.domain.items.ItemsTypes
+import com.diberardino.jbomb.domain.world.domain.items.UsableItem
+import com.diberardino.jbomb.network.events.forward.UpdateInfoEventForwarder
+import com.diberardino.jbomb.utility.Paths.entitiesFolder
+import com.diberardino.jbomb.utility.Utility
+import com.diberardino.jbomb.utility.now
 
 class BombItem : UsableItem() {
     private lateinit var bombEntity: Bomb
@@ -22,32 +24,32 @@ class BombItem : UsableItem() {
         ) >= Bomb.PLACE_INTERVAL
 
         if (!isBombPlacementIntervalValid) {
-            Log.e("Cannot place bomb, too early")
+            Log.e(this.javaClass.simpleName, "Cannot place bomb, too early")
             return -1
         }
 
         if (isLocalPlayer && owner.state.placedBombs >= owner.state.maxBombs) {
-            Log.e("owner.state.placedBombs: ${owner.state.placedBombs}")
-            Log.e("owner.state.maxBombs: ${owner.state.maxBombs}")
-            Log.e("Cannot place bomb, placedBombs >= maxBombs")
+            Log.e(this.javaClass.simpleName, "owner.state.placedBombs: ${owner.state.placedBombs}")
+            Log.e(this.javaClass.simpleName, "owner.state.maxBombs: ${owner.state.maxBombs}")
+            Log.e(this.javaClass.simpleName, "Cannot place bomb, placedBombs >= maxBombs")
             return -1
         }
 
         if (isLocalPlayer && owner.state.currentBombs <= 0) {
-            Log.e("owner.state.currentBombs: ${owner.state.currentBombs}")
-            Log.e("Cannot place bomb, currentBombs <= 0")
+            Log.e(this.javaClass.simpleName, "owner.state.currentBombs: ${owner.state.currentBombs}")
+            Log.e(this.javaClass.simpleName, "Cannot place bomb, currentBombs <= 0")
             return -1
         }
 
         if (isLocalPlayer && owner.state.currExplosionLength <= 0) {
-            Log.e("owner.state.currExplosionLength: ${owner.state.currExplosionLength}")
-            Log.e("Cannot place bomb, currExplosionLength <= 0")
+            Log.e(this.javaClass.simpleName, "owner.state.currExplosionLength: ${owner.state.currExplosionLength}")
+            Log.e(this.javaClass.simpleName, "Cannot place bomb, currExplosionLength <= 0")
             return -1
         }
 
         if (isLocalPlayer && owner.state.currentBombs >= match.currentLevel.info.maxBombs) {
-            Log.e("owner.state.currentBombs: ${owner.state.currentBombs}")
-            Log.e("Cannot place bomb, currentBombs >= maxBombs")
+            Log.e(this.javaClass.simpleName, "owner.state.currentBombs: ${owner.state.currentBombs}")
+            Log.e(this.javaClass.simpleName, "Cannot place bomb, currentBombs >= maxBombs")
             return -1
         }
 
@@ -62,7 +64,7 @@ class BombItem : UsableItem() {
             Bomb(this, owner)
         } ?: Bomb(owner)
 
-        Log.e("Spawning bomb with id ${bombEntity.info.id}")
+        Log.e(this.javaClass.simpleName, "Spawning bomb with id ${bombEntity.info.id}")
 
         UpdateInfoEventForwarder().invoke((bombEntity as Entity).toEntityNetwork())
 

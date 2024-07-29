@@ -1,4 +1,4 @@
-package game.domain.world.types
+package com.diberardino.jbomb.domain.world.types
 
 enum class EntityTypes {
     Player,

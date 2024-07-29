@@ -1,10 +1,9 @@
-package game.domain.level.gamehandler.model
+package com.diberardino.jbomb.domain.level.gamehandler.model
 
-import game.domain.level.levels.Level
+import android.graphics.Bitmap
+import com.diberardino.jbomb.domain.events.level.levels.Level
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal.AnimalEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
-import java.awt.Image
 
 abstract class GameHandler(protected val level: Level) {
     open fun generate() {
@@ -28,7 +27,7 @@ abstract class GameHandler(protected val level: Level) {
     abstract fun spawnBoss()
     abstract fun spawnEnemies()
     abstract fun spawnEnemies(availableEnemies: Array<Class<out Enemy>>, count: Int)
-    abstract val borderImages: Array<Image?>
+    abstract val borderImages: Array<Bitmap?>
     abstract fun spawnMysteryBox()
     abstract fun canGameBeEnded(): Boolean
     abstract fun spawnAnimals(availableAnimals: Array<Class<out AnimalEntity>>)

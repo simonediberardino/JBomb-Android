@@ -1,10 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player
 
-import game.audio.SoundModel
-import game.data.data.DataInputOutput
+import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.events.game.HealthUpdatedEvent
-import game.domain.world.types.EntityTypes
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
@@ -13,8 +10,10 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entit
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.graphics.PlayerImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.logic.PlayerLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.state.PlayerState
-import game.utils.dev.Extensions.getOrTrim
-import game.utils.skin.SkinUtilities
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
+import com.diberardino.jbomb.utility.SkinUtilities
 
 class Player : BomberEntity {
     constructor() : super()
@@ -27,9 +26,12 @@ class Player : BomberEntity {
     override val image: PlayerImageModel = PlayerImageModel(entity = this)
     override val properties: BomberEntityProperties = object : BomberEntityProperties(
             types = EntityTypes.BomberEntity,
-            skinId = SkinUtilities.getSkinId(DataInputOutput.getInstance().skin),
+            skinId = SkinUtilities.getSkinId(
+                "skin0"
+                //DataInputOutput.getInstance().skin
+            ),
     ) {
-        override var name: String? = DataInputOutput.getInstance().username
+        override var name: String? = "user"//DataInputOutput.getInstance().username
     }
 
     internal object DEFAULT {

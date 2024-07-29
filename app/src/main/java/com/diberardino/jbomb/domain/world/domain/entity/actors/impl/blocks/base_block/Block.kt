@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block
 
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
@@ -19,6 +19,6 @@ abstract class Block : Entity {
     override val image: EntityImageModel = EntityImageModel(entity = this)
 
     companion object {
-        val SIZE = PitchPanel.GRID_SIZE
+        val SIZE = GRID_SIZE
     }
 }

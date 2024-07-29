@@ -2,7 +2,7 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.logic.EntityLogic
-import game.domain.tasks.observer.Observable2
+import com.diberardino.jbomb.domain.tasks.observer.Observable2
 
 open class BlockEntityLogic(entity: Entity) : EntityLogic(entity), IBlockEntityLogic {
     override fun destroy() {

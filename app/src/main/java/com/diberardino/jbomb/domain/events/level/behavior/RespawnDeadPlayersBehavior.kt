@@ -1,8 +1,12 @@
 package com.diberardino.jbomb.domain.events.level.behavior
 
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
+import com.diberardino.jbomb.utility.Extensions.toMap
+
 class RespawnDeadPlayersBehavior : GameBehavior() {
     override fun hostBehavior(): () -> Unit = {
-        /*val deadPlayers: HashMap<Long, Pair<Class<out Entity>, Entity>> = JBomb.match.getDeadEntities()
+        val deadPlayers: HashMap<Long, Pair<Class<out Entity>, Entity>> = JBomb.match.getDeadEntities()
 
         deadPlayers.forEach { (id, pair) ->
             val clazz = pair.first
@@ -14,7 +18,7 @@ class RespawnDeadPlayersBehavior : GameBehavior() {
             entity.info.position = JBomb.match.currentLevel.info.playerSpawnCoordinates
             entity.updateInfo(info)
             entity.logic.spawn(forceSpawn = false, forceCentering = false)
-        }*/
+        }
     }
 
     override fun clientBehavior(): () -> Unit {

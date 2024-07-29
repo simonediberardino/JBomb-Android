@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.properties
 
-import game.input.Command
+import com.diberardino.jbomb.input.Command
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityState
@@ -8,7 +8,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.E
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 open class EnemyEntityState(
     entity: Entity,

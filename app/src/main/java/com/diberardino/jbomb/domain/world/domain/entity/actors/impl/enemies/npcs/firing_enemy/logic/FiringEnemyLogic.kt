@@ -10,7 +10,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.PistolExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.handler.ExplosionHandler
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

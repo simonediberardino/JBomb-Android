@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.logic
 
-import game.JBomb
-import game.audio.AudioManager
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.audio.AudioManager
 import com.diberardino.jbomb.domain.events.level.behavior.LocationChangedBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
@@ -10,14 +10,14 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.input.Command
-import game.network.events.forward.CustomUpdateInfoEventForwarder
-import game.network.models.HttpMessageTypes
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.Utility
-import game.utils.dev.Log
-import game.utils.time.now
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.input.Command
+import com.diberardino.jbomb.network.events.forward.CustomUpdateInfoEventForwarder
+import com.diberardino.jbomb.network.models.HttpMessageTypes
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.utils.Utility
+import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utils.time.now
 import java.awt.event.ActionEvent
 import java.util.*
 import kotlin.math.max
@@ -123,7 +123,7 @@ abstract class CharacterEntityLogic(
             if (entity.state.takingDamage)
                 return
 
-            Log.e("$entity attack received $damage, curr health: ${entity.state.hp}")
+            Log.e(this.javaClass.simpleName, "$entity attack received $damage, curr health: ${entity.state.hp}")
             val currHealth = entity.state.hp - damage
             entity.state.lastDamageTime = now()
 
@@ -131,7 +131,7 @@ abstract class CharacterEntityLogic(
             updateHealth(max(currHealth, 0))
             damageAnimation()
 
-            Log.e("$entity new health: ${entity.state.hp}")
+            Log.e(this.javaClass.simpleName, "$entity new health: ${entity.state.hp}")
 
             // If the health points reach 0 or below, despawn the entity
             if (entity.state.hp <= 0) {

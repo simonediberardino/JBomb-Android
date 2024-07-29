@@ -4,7 +4,7 @@ import com.diberardino.jbomb.domain.events.level.behavior.GameBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ai_enemy.logic.AiEnemyLogic
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.EndLevelPortal
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.EndLevelPortal
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 
 open class BossEntityLogic(override val entity: Boss) : AiEnemyLogic(entity = entity),

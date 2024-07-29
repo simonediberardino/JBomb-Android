@@ -1,17 +1,16 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.logic
 
-import game.JBomb
-import game.domain.events.game.DeathGameEvent
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.domain.events.game.DeathGameEvent
 import com.diberardino.jbomb.domain.events.game.HealthUpdatedEvent
 import com.diberardino.jbomb.domain.events.game.InitBombsVariablesGameEvent
-import game.domain.tasks.observer.Observable2
+import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.logic.BomberEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.Player
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import game.input.Command
-import game.localization.Localization
-import game.presentation.ui.viewelements.misc.ToastHandler
-import game.utils.time.now
+import com.diberardino.jbomb.input.Command
+import com.diberardino.jbomb.localization.Localization
+import com.diberardino.jbomb.utility.now
 
 class PlayerLogic(override val entity: Player) : BomberEntityLogic(entity = entity) {
     override fun onSpawn() {
@@ -21,18 +20,18 @@ class PlayerLogic(override val entity: Player) : BomberEntityLogic(entity = enti
 
         super.onSpawn()
 
-        ToastHandler.getInstance().cancel();
+        //ToastHandler.getInstance().cancel();
         InitBombsVariablesGameEvent().invoke()
 
         JBomb.match.gameTickerObservable?.register(entity)
-        JBomb.match.controllerManager?.register(entity)
-        JBomb.JBombFrame.matchPanel.refreshPowerUps(entity.state.activePowerUps)
+        //JBomb.match.controllerManager?.register(entity)
+        JBomb.match.refreshPowerUpsUi(entity.state.activePowerUps)
     }
 
     override fun onDespawn() {
         super.onDespawn()
 
-        JBomb.JBombFrame.matchPanel.refreshPowerUps(entity.state.activePowerUps)
+        JBomb.match.refreshPowerUpsUi(entity.state.activePowerUps)
     }
 
     override fun onEliminated() {
@@ -42,12 +41,12 @@ class PlayerLogic(override val entity: Player) : BomberEntityLogic(entity = enti
 
     override fun doAttack() {
         JBomb.match.useItem(entity)
-        JBomb.match.updateInventoryWeaponController()
+        JBomb.match.updateWeaponUi()
     }
 
     override fun onRemoved() {
         super.onRemoved()
-        JBomb.match.controllerManager?.unregister(entity)
+        //JBomb.match.controllerManager?.unregister(entity)
     }
 
     override fun observerUpdate(arg: Observable2.ObserverParam) {
@@ -65,7 +64,7 @@ class PlayerLogic(override val entity: Player) : BomberEntityLogic(entity = enti
     override fun handleCommand(command: Command) {
         when (command) {
             Command.PAUSE -> {
-                JBomb.match.toggleGameState()
+                //JBomb.match.toggleGameState()
                 removeCommand(command)
             }
 
@@ -107,8 +106,8 @@ class PlayerLogic(override val entity: Player) : BomberEntityLogic(entity = enti
         val baseMessage = Localization.get(Localization.POWERUP_FOUND)
         powerUp.tag?.let {
             val message = baseMessage.replace("%powerup%", it).uppercase()
-            ToastHandler.getInstance().cancel();
-            ToastHandler.getInstance().show(message)
+            //ToastHandler.getInstance().cancel();
+            //ToastHandler.getInstance().show(message)
         }
     }
 }

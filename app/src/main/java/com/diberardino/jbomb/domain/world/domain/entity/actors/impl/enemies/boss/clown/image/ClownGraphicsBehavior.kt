@@ -3,7 +3,7 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.bos
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.graphics.BossEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.Clown
-import game.utils.file_system.Paths
+import com.diberardino.jbomb.utils.file_system.Paths
 
 class ClownGraphicsBehavior(override val entity: Clown) : BossEntityGraphicsBehavior(entity = entity) {
     override fun getImageFromRageStatus(): String =

@@ -8,8 +8,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.properties.BossEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.utils.time.now
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.utils.time.now
 
 class GhostBossState(
     entity: Entity,

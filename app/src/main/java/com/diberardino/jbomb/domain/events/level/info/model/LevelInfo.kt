@@ -1,10 +1,10 @@
-package game.domain.level.info.model
+package com.diberardino.jbomb.domain.events.level.info.model
 
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import game.domain.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.levels.Level
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal.AnimalEntity
+import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 
 /**

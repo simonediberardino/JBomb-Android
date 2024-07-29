@@ -1,9 +1,10 @@
-package game.domain.level.levels.lobby
+package com.diberardino.jbomb.domain.level.levels.lobby
 
-import game.data.data.DataInputOutput
-import game.localization.Localization
+import com.diberardino.jbomb.data.data.DataInputOutput
+import com.diberardino.jbomb.domain.events.level.levels.lobby.IslandLevel
+import com.diberardino.jbomb.localization.Localization
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.World1Portal
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.World2Portal
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.World2Portal
 
 class WorldSelectorLevel : IslandLevel() {
     override fun generateLevel() {

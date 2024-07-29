@@ -9,8 +9,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charact
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.properties.EnemyEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.yellow_ball.properties.YellowBallProperties
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 class YellowBall : AiEnemy {
     constructor() : super()

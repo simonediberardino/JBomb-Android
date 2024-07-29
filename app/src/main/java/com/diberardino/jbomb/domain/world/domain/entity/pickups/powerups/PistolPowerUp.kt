@@ -1,19 +1,19 @@
 package com.diberardino.jbomb.domain.world.domain.pickups.powerups
 
-import game.JBomb
+import android.graphics.Bitmap
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
-import game.domain.world.types.EntityTypes
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.items.PistolItem
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.logic.PowerUpLogic
-import game.localization.Localization
-import game.utils.file_system.Paths.itemsPath
-import java.awt.image.Bitmap
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.localization.Localization
+import com.diberardino.jbomb.utility.Paths.itemsPath
 
 class PistolPowerUp : PowerUp {
     constructor(id: Long) : super(id)

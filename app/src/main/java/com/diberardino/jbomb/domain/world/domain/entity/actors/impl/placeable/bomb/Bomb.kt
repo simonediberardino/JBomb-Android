@@ -1,7 +1,7 @@
     package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb
 
-    import game.audio.AudioManager
-    import game.audio.SoundModel
+    import com.diberardino.jbomb.audio.AudioManager
+    import com.diberardino.jbomb.audio.SoundModel
     import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
     import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityImageModel
     import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
@@ -17,9 +17,10 @@
     import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.base.state.PlaceableEntityState
     import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.logic.BombLogic
     import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.state.BombState
+    import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
     import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-    import game.domain.world.types.EntityTypes
-    import game.utils.file_system.Paths
+    import com.diberardino.jbomb.domain.world.types.EntityTypes
+    import com.diberardino.jbomb.utils.file_system.Paths
 
     /**
      * Represents a bomb entity that can explode and cause damage in the game.

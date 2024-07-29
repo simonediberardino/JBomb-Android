@@ -1,7 +1,8 @@
 package com.diberardino.jbomb.domain.world.domain.geo
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 
 enum class EnhancedDirection {
     LEFTUP, LEFTDOWN, RIGHTUP, RIGHTDOWN;
@@ -46,8 +47,8 @@ enum class EnhancedDirection {
             val coords = entity.info.position
 
             val centerEntityCoords = Coordinates(coords.x + entity.state.size / 2, coords.y + entity.state.size / 2)
-            val newHorizontalDirection: Direction = if (centerEntityCoords.x > PitchPanel.DIMENSION.getWidth() / 2) Direction.LEFT else Direction.RIGHT
-            val newVerticalDirection: Direction = if (centerEntityCoords.y < PitchPanel.DIMENSION.getHeight() / 2) Direction.DOWN else Direction.UP
+            val newHorizontalDirection: Direction = if (centerEntityCoords.x > matchPanelSize.width / 2) Direction.LEFT else Direction.RIGHT
+            val newVerticalDirection: Direction = if (centerEntityCoords.y < matchPanelSize.height / 2) Direction.DOWN else Direction.UP
             return toEnhancedDirection(arrayOf(newHorizontalDirection, newVerticalDirection))
         }
     }

@@ -1,9 +1,8 @@
-package game.domain.level.info.imp
+package com.diberardino.jbomb.domain.events.level.info.imp
 
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import game.domain.level.levels.Level
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
-import java.awt.Dimension
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.values.Dimension
 
 class IslandLevelInfo(level: Level) : LobbyLevelInfo(level) {
     override val worldId: Int get() = 0

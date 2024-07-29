@@ -6,8 +6,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charact
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.fast_enemy.FastPurpleBall
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 class FastEnemyProperties(
         drawPriority: DrawPriority = Character.DEFAULT.DRAW_PRIORITY,

@@ -1,16 +1,16 @@
 package com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.logic
 
-import game.JBomb
-import game.audio.AudioManager
-import game.audio.SoundModel
-import game.domain.tasks.observer.Observable2
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.audio.AudioManager
+import com.diberardino.jbomb.audio.SoundModel
+import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.logic.EntityInteractableLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import game.utils.dev.Log
+import com.diberardino.jbomb.utils.dev.Log
 import java.util.*
 
 abstract class PowerUpLogic(
@@ -70,10 +70,10 @@ abstract class PowerUpLogic(
     }
 
     override fun canPickUp(bomberEntity: BomberEntity): Boolean {
-        Log.e("active power ups: ${bomberEntity.state.activePowerUps}")
+        Log.e(this.javaClass.simpleName, "active power ups: ${bomberEntity.state.activePowerUps}")
 
         return bomberEntity.state.activePowerUps.all {
-            Log.e("it class is ${it::class.java}, entity class is ${this.entity.javaClass}")
+            Log.e(this.javaClass.simpleName, "it class is ${it::class.java}, entity class is ${this.entity.javaClass}")
 
             if (it == this.entity.javaClass && !entity.state.isPermanent) {
                 return@all false

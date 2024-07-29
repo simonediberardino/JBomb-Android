@@ -8,7 +8,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.domain.world.domain.items.UsableItem
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 

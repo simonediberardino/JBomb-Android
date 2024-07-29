@@ -1,21 +1,19 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.logic
 
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.JBomb.match
-import game.JBomb
-import game.JBomb.match
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityLogic
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.network.events.forward.CollideEventForwarder
+import com.diberardino.jbomb.network.events.forward.DespawnEntityEventForwarder
+import com.diberardino.jbomb.network.events.forward.SpawnEntityEventForwarder
+import com.diberardino.jbomb.network.events.forward.UpdateInfoEventForwarder
 import com.diberardino.jbomb.utility.Utility
-import game.network.events.forward.CollideEventForwarder
-import game.network.events.forward.DespawnEntityEventForwarder
-import game.network.events.forward.SpawnEntityEventForwarder
-import game.network.events.forward.UpdateInfoEventForwarder
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.Utility
-import game.utils.time.now
+import com.diberardino.jbomb.utility.now
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class EntityLogic(
         open val entity: Entity
@@ -99,7 +97,7 @@ abstract class EntityLogic(
     }
 
     override fun spawnOffset(): Coordinates =
-            Coordinates((PitchPanel.GRID_SIZE - entity.state.size) / 2, (PitchPanel.GRID_SIZE - entity.state.size) / 2)
+            Coordinates((GRID_SIZE - entity.state.size) / 2, (GRID_SIZE - entity.state.size) / 2)
 
 
     final override fun mouseClickedInteraction() {
@@ -151,7 +149,7 @@ abstract class EntityLogic(
 
         val centerCoordinatesOfEntity = Coordinates.roundCoordinates(Coordinates.getCenterCoordinatesOfEntity(player))
 
-        if (entity.info.position.distanceTo(centerCoordinatesOfEntity) <= PitchPanel.GRID_SIZE) {
+        if (entity.info.position.distanceTo(centerCoordinatesOfEntity) <= GRID_SIZE) {
             eliminated()
         }
     }
@@ -223,6 +221,7 @@ abstract class EntityLogic(
     override fun onMouseDragInteraction() {
         val player = match.player ?: return
 
+        /*
         val mouseControllerManager = match.mouseControllerManager
         val mouseCoordinates = Coordinates.roundCoordinates(mouseControllerManager.mouseCoords)
         val isBlockOccupied = Coordinates.isBlockOccupied(mouseCoordinates)
@@ -233,11 +232,11 @@ abstract class EntityLogic(
         if (isBlockOccupied)
             return
 
-        val isPlayerNear = roundedEntityCoords.distanceTo(roundedPlayerCoords) <= PitchPanel.GRID_SIZE
+        val isPlayerNear = roundedEntityCoords.distanceTo(roundedPlayerCoords) <= GRID_SIZE
 
         if (!isPlayerNear)
             return
 
-        entity.info.position = Coordinates.roundCoordinates(mouseCoordinates, spawnOffset())
+        entity.info.position = Coordinates.roundCoordinates(mouseCoordinates, spawnOffset())*/
     }
 }

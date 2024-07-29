@@ -1,13 +1,11 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.properties
 
 import com.diberardino.jbomb.audio.SoundModel
-import game.audio.SoundModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
 import com.diberardino.jbomb.values.DrawPriority
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
-import game.domain.world.types.EntityTypes
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.values.DrawPriority
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 open class MovingEntityProperties(
     drawPriority: DrawPriority,

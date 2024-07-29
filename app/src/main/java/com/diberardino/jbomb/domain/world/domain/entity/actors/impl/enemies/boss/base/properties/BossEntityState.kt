@@ -8,7 +8,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 open class BossEntityState(
     entity: Entity,

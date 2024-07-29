@@ -1,12 +1,12 @@
-package game.domain.level.levels.world2
+package com.diberardino.jbomb.domain.level.levels.world2
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.eagle.Eagle
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.tank.TankEnemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import game.domain.level.levels.Level
-import game.domain.level.levels.StoryLevel
-import game.domain.level.info.model.LevelInfo
-import game.domain.level.info.imp.World2levelInfo
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.levels.StoryLevel
+import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
+import com.diberardino.jbomb.domain.events.level.info.imp.World2levelInfo
 
 class World2Level2 : StoryLevel() {
     override val info: LevelInfo

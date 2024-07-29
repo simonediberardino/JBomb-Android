@@ -4,8 +4,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.logic.IMovingEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.properties.MovingEntityProperties
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 abstract class MovingEntity : EntityInteractable {
     constructor(coordinates: Coordinates?) : super(coordinates)

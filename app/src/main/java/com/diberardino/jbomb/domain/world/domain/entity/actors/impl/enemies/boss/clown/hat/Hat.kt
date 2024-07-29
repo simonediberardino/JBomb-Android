@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat
 
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.Orb
 import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
@@ -13,7 +13,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat.logic.HatEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat.properties.HatEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.properties.OrbEntityProperties
-import game.utils.file_system.Paths
+import com.diberardino.jbomb.utils.file_system.Paths
 
 open class Hat : Orb {
     constructor(coordinates: Coordinates?, enhancedDirection: EnhancedDirection?) : super(coordinates, enhancedDirection) {}

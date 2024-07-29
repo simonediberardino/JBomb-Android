@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.state
 
-import game.domain.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.levels.Level
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.properties.BlockEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity

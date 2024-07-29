@@ -1,30 +1,37 @@
-package game.domain.level.gamehandler.imp
+package com.diberardino.jbomb.domain.events.level.gamehandler.imp
 
+import android.graphics.Bitmap
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.JBombApplication
+import com.diberardino.jbomb.domain.events.level.behavior.DespawnDestroyableBlocksBehavior
+import com.diberardino.jbomb.domain.events.level.behavior.GenerateDestroyableBlocksBehavior
+import com.diberardino.jbomb.domain.events.level.behavior.GeneratePlayerBehavior
 import com.diberardino.jbomb.domain.events.level.behavior.GenerateStoneBehavior
-import game.JBomb
-import com.diberardino.jbomb.domain.events.level.behavior.*
-import game.domain.level.gamehandler.model.GameHandler
-import game.domain.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.behavior.SpawnAnimalsBehavior
+import com.diberardino.jbomb.domain.events.level.behavior.SpawnBossBehavior
+import com.diberardino.jbomb.domain.events.level.behavior.SpawnEnemiesBehavior
+import com.diberardino.jbomb.domain.events.level.behavior.SpawnMysteryBoxBehavior
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal.AnimalEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import game.utils.Utility
-import java.awt.Image
+import com.diberardino.jbomb.utility.Utility
 
 open class DefaultGameHandler(level: Level) : GameHandler(level) {
-    override val borderImages: Array<Image?>
+    override val borderImages: Array<Bitmap?>
         get() {
             val SIDES = 4
-            val pitch = arrayOfNulls<Image>(SIDES)
+            val pitch = arrayOfNulls<Bitmap>(SIDES)
             for (i in 0 until SIDES) {
                 val path = level.fileSystemHandler.getImageForCurrentLevel("border_$i.png")
-                pitch[i] = Utility.loadImage(path)
+                pitch[i] = Utility.loadImage(JBombApplication.context, path)
             }
             return pitch
         }
 
-    override fun generateStone() = GenerateStoneBehavior(level.field).invoke()
+    override fun generateStone() = GenerateStoneBehavior().invoke()
 
     override fun generatePlayer() = GeneratePlayerBehavior(level.info.playerSpawnCoordinates).invoke()
 

@@ -1,20 +1,18 @@
-package com.diberardino.jbomb.domain.world.domain.pickups.portals
+package com.diberardino.jbomb.domain.world.domain.entity.pickups.portals
 
-import game.JBomb
-import game.data.data.DataInputOutput
-import game.domain.level.levels.lobby.WorldSelectorLevel
+import android.graphics.Bitmap
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.domain.level.levels.lobby.WorldSelectorLevel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.base.Portal
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.base.Portal
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.base.logic.PortalLogic
-import game.domain.world.types.EntityTypes
-import game.utils.file_system.Paths.powerUpsFolder
-import java.awt.image.Bitmap
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.utility.Paths.powerUpsFolder
 
 class EndLevelPortal : Portal {
     constructor(id: Long) : super(id)
@@ -40,15 +38,15 @@ class EndLevelPortal : Portal {
             val currentLevel = match.currentLevel
 
             currentLevel.endLevel()
-            JBomb.destroyLevel(true)
-            DataInputOutput.getInstance().increaseLives()
+            JBomb.match.destroy(true)
+            //DataInputOutput.getInstance().increaseLives()
 
             try {
                 val nextLevelClass = if (currentLevel.info.isLastLevelOfWorld)
                     WorldSelectorLevel::class.java
                 else currentLevel.info.nextLevel
 
-                JBomb.startLevel(nextLevelClass!!.getDeclaredConstructor().newInstance(), match.onlineGameHandler)
+                //JBomb.startLevel(nextLevelClass!!.getDeclaredConstructor().newInstance(), match.onlineGameHandler)
             } catch (e: Exception) {
                 e.printStackTrace()
             }

@@ -8,9 +8,9 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.hard_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.logic.MysteryBoxLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.state.MysteryBoxState
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import game.domain.world.types.EntityTypes
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.file_system.Paths
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.utils.file_system.Paths
 import java.awt.image.Bitmap
 
 abstract class MysteryBox : HardBlock(Coordinates(0, 0)) {
@@ -36,6 +36,6 @@ abstract class MysteryBox : HardBlock(Coordinates(0, 0)) {
     }
 
     internal object DEFAULT {
-        val SIZE = PitchPanel.GRID_SIZE
+        val SIZE = GRID_SIZE
     }
 }

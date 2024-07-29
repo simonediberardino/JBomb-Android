@@ -2,17 +2,17 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npc
 
 import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
-import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.utility.Paths.enemiesFolder
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterGraphicsBehavior
+import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.Orb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.logic.OrbEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.properties.OrbEntityProperties
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.utility.Paths.enemiesFolder
 
 class ClownNose : Orb {
     constructor(coordinates: Coordinates?, enhancedDirection: EnhancedDirection?) : super(coordinates, enhancedDirection)

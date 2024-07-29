@@ -5,9 +5,9 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charact
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.properties.BossEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.Clown
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.domain.world.types.EntityTypes
-import game.values.DrawPriority
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.values.DrawPriority
 import java.util.TreeMap
 
 class ClownProperties(

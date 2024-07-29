@@ -1,11 +1,12 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics
 
+import android.graphics.Bitmap
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
-import game.utils.Utility.fileExists
-import game.utils.Utility.loadImage
-import game.utils.dev.Log
-import game.utils.time.now
+import com.diberardino.jbomb.utils.Utility.fileExists
+import com.diberardino.jbomb.utils.Utility.loadImage
+import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utils.time.now
 import java.awt.image.Bitmap
 import java.util.*
 import java.util.regex.Pattern
@@ -33,7 +34,7 @@ abstract class DefaultEntityGraphicsBehavior : IEntityGraphicsBehavior {
                 return entity.image._image
             }
         } catch (exception: Exception) {
-            Log.e("Could not load image $imagePath")
+            Log.e(this.javaClass.simpleName, "Could not load image $imagePath")
             throw exception
         }
     }

@@ -1,6 +1,6 @@
-package game.domain.level.eventhandler.imp
+package com.diberardino.jbomb.domain.level.eventhandler.imp
 
-import game.domain.level.eventhandler.model.LevelEventHandler
+import com.diberardino.jbomb.domain.level.eventhandler.model.LevelEventHandler
 
 open class DefaultLevelEventHandler : LevelEventHandler {
     override fun onDefeatGameEvent() {

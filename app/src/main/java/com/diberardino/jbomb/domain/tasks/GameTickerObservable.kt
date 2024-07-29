@@ -1,8 +1,7 @@
-package game.domain.tasks
+package com.diberardino.jbomb.domain.tasks
 
-import game.domain.tasks.GameTickerObserver.Companion.DEFAULT_OBSERVER_UPDATE
-import game.domain.tasks.observer.Observable2
-import game.utils.dev.Log
+import com.diberardino.jbomb.domain.tasks.GameTickerObserver.Companion.DEFAULT_OBSERVER_UPDATE
+import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import kotlinx.coroutines.CoroutineScope
 
 /**

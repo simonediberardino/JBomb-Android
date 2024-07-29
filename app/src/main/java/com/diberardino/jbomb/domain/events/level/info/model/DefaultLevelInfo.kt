@@ -1,12 +1,12 @@
-package game.domain.level.info.model
+package com.diberardino.jbomb.domain.events.level.info.model
 
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import game.domain.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.levels.Level
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal.AnimalEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.animals.FoxAnimal
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class DefaultLevelInfo(val level: Level) : LevelInfo() {
     override val bossMaxHealth: Int = 1000
@@ -20,7 +20,7 @@ abstract class DefaultLevelInfo(val level: Level) : LevelInfo() {
 
     override val restrictedPerks: Array<Class<out PowerUp>> = arrayOf()
     override val randomPowerUpClass: Class<out PowerUp> get() = allowedPerks.random()
-    override val playerSpawnCoordinates: Coordinates get() = Coordinates.generateRandomCoordinates(BomberEntity.SPAWN_OFFSET, PitchPanel.GRID_SIZE)
+    override val playerSpawnCoordinates: Coordinates get() = Coordinates.generateRandomCoordinates(BomberEntity.SPAWN_OFFSET, GRID_SIZE)
     override val isLastLevelOfWorld: Boolean get() = false
     override val startAnimalsCount: Int
         get() = 0

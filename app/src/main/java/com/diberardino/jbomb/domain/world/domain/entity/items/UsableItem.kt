@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.items
 
-import game.JBomb
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 
 abstract class UsableItem {

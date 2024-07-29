@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.logic
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat.Hat
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 interface IClownLogic {
     fun spawnOrbs()

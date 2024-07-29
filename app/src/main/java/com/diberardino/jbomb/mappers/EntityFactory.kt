@@ -1,13 +1,44 @@
 package com.diberardino.jbomb.mappers
 
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.animals.FoxAnimal
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destroyable_block.DestroyableBlock
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.invisible_block.InvisibleBlock
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.stone_block.StoneBlock
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.Player
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.remote_player.RemotePlayer
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.MysteryBoxPerk
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.Clown
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat.Hat
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.GhostBoss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.clown_nose.ClownNose
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.eagle.Eagle
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.fast_enemy.FastPurpleBall
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ghost_enemy.GhostEnemy
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.helicopter.Helicopter
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.skeleton.SkeletonEnemy
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.tank.TankEnemy
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.yellow_ball.YellowBall
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.zombie.Zombie
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.EndLevelPortal
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.World2Portal
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.ArmorPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.BlockMoverPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.EmptyPowerup
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.FirePowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.HammerPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.IncreaseMaxBombsPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.LivesPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.RemoteControlPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.SpeedPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.TransparentBombsPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.TransparentDestroyableBlocksPowerUp
+import com.diberardino.jbomb.domain.world.domain.pickups.portals.World1Portal
+import com.diberardino.jbomb.domain.world.domain.pickups.powerups.PistolPowerUp
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.network.gamehandler.ClientGameHandler
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class EntityFactory {
     fun toEntity(entityTypes: EntityTypes, id: Long, extra:  Map<String, String>? = null): Entity? {

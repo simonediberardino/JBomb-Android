@@ -1,15 +1,15 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.ai.logic
 
-import game.JBomb
-import game.domain.tasks.observer.Observable2
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.logic.CharacterEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ai_enemy.AiEnemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ai_enemy.logic.IAiLogic
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.utils.Utility
-import game.utils.dev.XMLUtils
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.utils.Utility
+import com.diberardino.jbomb.utils.dev.XMLUtils
 
 open class AiLogic(override val entity: Character) : CharacterEntityLogic(entity = entity),
     IAiLogic {

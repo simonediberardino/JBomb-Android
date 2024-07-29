@@ -1,9 +1,8 @@
-package game.domain.level.info.model
+package com.diberardino.jbomb.domain.events.level.info.model
 
-import game.domain.level.levels.ArenaLevel
+import com.diberardino.jbomb.domain.events.level.levels.ArenaLevel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import game.localization.Localization
-import kotlin.math.max
+import com.diberardino.jbomb.localization.Localization
 import kotlin.math.min
 
 abstract class DefaultArenaLevelInfo(level: ArenaLevel): DefaultLevelInfo(level) {

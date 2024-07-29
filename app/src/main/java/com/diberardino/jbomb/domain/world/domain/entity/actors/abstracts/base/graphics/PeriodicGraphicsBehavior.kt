@@ -1,8 +1,8 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics
 
-import game.JBomb
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
-import game.utils.Utility
+import com.diberardino.jbomb.utils.Utility
 import kotlinx.coroutines.launch
 import java.awt.image.Bitmap
 

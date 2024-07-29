@@ -1,8 +1,12 @@
 package com.diberardino.jbomb.utility
 
+import kotlin.reflect.KProperty
+
 object Extensions {
     fun Any.toMap(): Map<String, String> {
-        return this::class.memberProperties.associate { prop ->
+        return this::class.members
+            .filterIsInstance<KProperty<*>>()
+            .associate { prop ->
             prop.name to when(val value = prop.getter.call(this)) {
                 is Iterable<*> -> value.joinToString { it?.toString() ?: "" }
                 is Array<*> -> value.joinToString { it?.toString() ?: "" }

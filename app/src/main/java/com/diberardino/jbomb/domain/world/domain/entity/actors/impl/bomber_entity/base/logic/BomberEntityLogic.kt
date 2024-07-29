@@ -1,16 +1,15 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.logic
 
-import game.JBomb
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.level.behavior.PlayerDeathBehavior
-import game.domain.tasks.observer.Observable2
+import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.logic.CharacterEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.items.BombItem
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.items.BombItem
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 open class BomberEntityLogic(override val entity: BomberEntity) : CharacterEntityLogic(entity = entity), IBomberEntityLogic {
     override fun doInteract(e: Entity?) {
@@ -62,7 +61,7 @@ open class BomberEntityLogic(override val entity: BomberEntity) : CharacterEntit
         }
 
         // If the minimum distance to a bomb is greater than half the grid size, make bombs solid.
-        if (minDistanceToBomb() > PitchPanel.GRID_SIZE / 2f) {
+        if (minDistanceToBomb() > GRID_SIZE / 2f) {
             entity.state.bombsSolid = true
         }
     }

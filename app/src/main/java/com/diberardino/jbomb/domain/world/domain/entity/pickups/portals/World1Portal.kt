@@ -6,8 +6,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.gr
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.WorldPortal
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.state.WorldPortalState
-import game.domain.world.types.EntityTypes
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import java.awt.Dimension
 
 class World1Portal() : WorldPortal(null, 1) {
@@ -17,7 +17,7 @@ class World1Portal() : WorldPortal(null, 1) {
 
     override val state: WorldPortalState = object : WorldPortalState(entity = this) {
         override val defaultCoords: Coordinates?
-            get() = Coordinates.fromRowAndColumnsToCoordinates(Dimension(3, 4), 0, -PitchPanel.GRID_SIZE / 2)
+            get() = Coordinates.fromRowAndColumnsToCoordinates(Dimension(3, 4), 0, -GRID_SIZE / 2)
     }
 
     override val properties: EntityProperties = EntityProperties(type = EntityTypes.World1Portal)

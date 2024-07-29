@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box
 
-import game.JBomb
-import game.domain.level.levels.Level
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.domain.events.level.levels.Level
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.MysteryBox
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.logic.MysteryBoxLogic
@@ -10,8 +10,8 @@ import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 
 class MysteryBoxPerk(
-        level: () -> Level?,
-        entity: () -> BomberEntity?
+    level: () -> Level?,
+    entity: () -> BomberEntity?
 ) : MysteryBox() {
     // TODO Refactor
     constructor(id: Long) : this({ JBomb.match.currentLevel }, { JBomb.match.player }) {

@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.events.game
 
-import game.domain.events.models.GameEvent
+import com.diberardino.jbomb.domain.events.models.GameEvent
 
 class NewToastGameEvent : GameEvent {
     override fun invoke(vararg arg: Any?) {

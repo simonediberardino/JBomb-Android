@@ -3,11 +3,10 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.dest
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.logic.BlockEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destroyable_block.DestroyableBlock
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.EndLevelPortal
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.EndLevelPortal
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import game.utils.Utility
-import java.lang.Exception
+import com.diberardino.jbomb.utility.Utility
 
 class DestroyableBlockLogic(override val entity: DestroyableBlock) : BlockEntityLogic(entity = entity) {
     companion object {

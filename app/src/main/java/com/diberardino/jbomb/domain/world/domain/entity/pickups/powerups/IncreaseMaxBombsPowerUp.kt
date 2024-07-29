@@ -1,21 +1,19 @@
-package com.diberardino.jbomb.domain.world.domain.pickups.powerups
+package com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups
 
-import game.JBomb
-import game.data.data.DataInputOutput
-import game.domain.world.types.EntityTypes
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import android.graphics.Bitmap
 import com.diberardino.jbomb.domain.events.game.UpdateMaxBombsEvent
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.logic.PowerUpLogic
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.state.PowerUpState
-import game.localization.Localization
-import game.utils.file_system.Paths.powerUpsFolder
-import java.awt.image.Bitmap
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.localization.Localization
+import com.diberardino.jbomb.utility.Paths.powerUpsFolder
 
 class IncreaseMaxBombsPowerUp
 /**
@@ -34,8 +32,8 @@ class IncreaseMaxBombsPowerUp
 
         override fun cancel(player: BomberEntity) {}
 
-        override fun canPickUp(bomberEntity: BomberEntity): Boolean =
-                DataInputOutput.getInstance().obtainedBombs < JBomb.match.currentLevel.info.maxBombs && super.canPickUp(bomberEntity)
+        override fun canPickUp(bomberEntity: BomberEntity): Boolean = true
+                //DataInputOutput.getInstance().obtainedBombs < JBomb.match.currentLevel.info.maxBombs && super.canPickUp(bomberEntity)
     }
 
     override val state: PowerUpState = object : PowerUpState(entity = this) {

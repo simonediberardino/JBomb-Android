@@ -9,7 +9,7 @@ import com.diberardino.jbomb.utility.Paths.enemiesFolder
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityProperties
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 class SkeletonEnemy : FiringEnemy {
     constructor() : super()

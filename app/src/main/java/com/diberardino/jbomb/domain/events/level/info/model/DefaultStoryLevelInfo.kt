@@ -1,15 +1,12 @@
-package game.domain.level.info.model
+package com.diberardino.jbomb.domain.events.level.info.model
 
-import game.data.data.DataInputOutput
-import game.domain.level.levels.Level
-import game.localization.Localization
-import com.diberardino.jbomb.domain.world.domain.pickups.powerups.LivesPowerUp
-import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.localization.Localization
 
 abstract class DefaultStoryLevelInfo(level: Level) : DefaultLevelInfo(level) {
     override val diedMessage: String
         get() {
-            val lives = DataInputOutput.getInstance().lives
+            val lives = 3//DataInputOutput.getInstance().lives
             return Localization.get(Localization.YOU_DIED).replace("%lives%", lives.toString())
         }
 

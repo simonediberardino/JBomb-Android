@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.graphics
 
-import game.domain.events.models.RunnablePar
+import com.diberardino.jbomb.domain.events.models.RunnablePar
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.GhostBoss

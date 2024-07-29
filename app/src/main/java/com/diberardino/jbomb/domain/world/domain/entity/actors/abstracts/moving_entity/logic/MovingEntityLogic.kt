@@ -3,8 +3,8 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.logic.EntityInteractableLogic
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import java.util.*
 
 abstract class MovingEntityLogic(

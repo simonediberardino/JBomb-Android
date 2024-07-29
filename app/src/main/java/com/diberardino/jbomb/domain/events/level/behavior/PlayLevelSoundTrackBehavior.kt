@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.events.level.behavior
 
-import game.domain.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.levels.Level
 
 class PlayLevelSoundTrackBehavior(private val level: Level) : GameBehavior() {
     override fun hostBehavior(): () -> Unit {

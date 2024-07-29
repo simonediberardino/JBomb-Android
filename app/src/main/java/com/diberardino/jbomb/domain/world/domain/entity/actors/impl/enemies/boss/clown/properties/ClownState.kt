@@ -8,7 +8,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.properties.BossEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.Clown
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 class ClownState(
     entity: Entity,

@@ -1,22 +1,29 @@
-package game.domain.level.levels
+package com.diberardino.jbomb.domain.events.level.levels
 
-import game.JBomb
-import game.data.data.DataInputOutput
+import android.util.Log
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.level.behavior.PlayLevelSoundBehavior
 import com.diberardino.jbomb.domain.events.level.behavior.PlayLevelSoundTrackBehavior
-import game.domain.level.eventhandler.imp.DefaultLevelEventHandler
-import game.domain.level.eventhandler.model.LevelEventHandler
-import game.domain.level.filesystem.LevelFileSystemHandler
-import game.domain.level.gamehandler.imp.DefaultGameHandler
-import game.domain.level.gamehandler.model.GameHandler
-import game.domain.level.info.model.LevelInfo
-import game.domain.level.levels.lobby.WorldSelectorLevel
-import game.domain.level.levels.world1.*
-import game.domain.level.levels.world2.*
-import game.utils.dev.Log
-import java.util.*
-import javax.sound.sampled.Clip
-import javax.swing.JPanel
+import com.diberardino.jbomb.domain.events.level.filesystem.LevelFileSystemHandler
+import com.diberardino.jbomb.domain.events.level.gamehandler.imp.DefaultGameHandler
+import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
+import com.diberardino.jbomb.domain.level.eventhandler.imp.DefaultLevelEventHandler
+import com.diberardino.jbomb.domain.level.eventhandler.model.LevelEventHandler
+import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
+import com.diberardino.jbomb.domain.level.levels.lobby.WorldSelectorLevel
+import com.diberardino.jbomb.domain.level.levels.world1.World1Arena
+import com.diberardino.jbomb.domain.level.levels.world1.World1Level1
+import com.diberardino.jbomb.domain.level.levels.world1.World1Level2
+import com.diberardino.jbomb.domain.level.levels.world1.World1Level3
+import com.diberardino.jbomb.domain.level.levels.world1.World1Level4
+import com.diberardino.jbomb.domain.level.levels.world1.World1Level5
+import com.diberardino.jbomb.domain.level.levels.world2.World2Arena
+import com.diberardino.jbomb.domain.level.levels.world2.World2Level1
+import com.diberardino.jbomb.domain.level.levels.world2.World2Level2
+import com.diberardino.jbomb.domain.level.levels.world2.World2Level3
+import com.diberardino.jbomb.domain.level.levels.world2.World2Level4
+import com.diberardino.jbomb.domain.level.levels.world2.World2Level5
+import java.util.Optional
 
 /**
  * Abstract base class representing a game level of a BombermanMatch, handling specific behavior and properties.
@@ -32,20 +39,18 @@ abstract class Level {
         gameHandler = DefaultGameHandler(this)
     }
 
-    lateinit var field: JPanel
     var currentLevelSound: String? = null
 
     abstract fun endLevel()
     abstract fun onStartLevel()
 
-    open fun start(field: JPanel) {
-        Log.e("Starting $this")
+    open fun start() {
+        Log.e(this.javaClass.simpleName, "Starting $this")
         JBomb.match.gameState = true
-        this@Level.field = field
         updateLastLevel()
         PlayLevelSoundTrackBehavior(this@Level).invoke()
         PlayLevelSoundBehavior(this@Level).invoke()
-        DataInputOutput.getInstance().resetLivesIfNecessary()
+        //DataInputOutput.getInstance().resetLivesIfNecessary()
         gameHandler.generate()
     }
 
@@ -72,7 +77,7 @@ abstract class Level {
         )
 
         fun findLevel(worldId: Int, levelId: Int): Optional<Class<out Level>> {
-            return Level.ID_TO_LEVEL.entries
+            return ID_TO_LEVEL.entries
                     .firstOrNull { (key, _) -> key[0] == worldId && key[1] == levelId }
                     ?.value
                     ?.let { Optional.of(it) }

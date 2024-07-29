@@ -4,8 +4,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.movable_block.MovableBlock
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.base.state.PlaceableEntityState
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import game.mappers.dtoToEntityNetwork
-import game.network.entity.PlaceableEntityNetwork
+import com.diberardino.jbomb.mappers.dtoToEntityNetwork
+import com.diberardino.jbomb.network.entity.PlaceableEntityNetwork
 
 abstract class PlaceableEntity(
         coordinates: Coordinates? = null

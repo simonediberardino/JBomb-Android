@@ -14,7 +14,7 @@ import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 import com.diberardino.jbomb.values.DrawPriority
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 /**
  * An abstract class for in-game explosions;

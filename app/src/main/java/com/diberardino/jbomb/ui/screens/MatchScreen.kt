@@ -17,13 +17,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.IntSize
 import com.diberardino.jbomb.ui.composable.control.Joystick
 import com.diberardino.jbomb.ui.composable.control.loadImageFromAssets
 import com.diberardino.jbomb.ui.theme.paddingScreenDevice
+import com.diberardino.jbomb.values.Dimension
 
-var matchPanelSize = IntSize.Zero
+
+var matchPanelSize = Dimension(0, 0)
     private set
 
 @Composable
@@ -105,7 +107,9 @@ fun GamePitchWithBorders() {
             )
 
             Row(
-                modifier = Modifier.weight(1f).fillMaxSize())
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize())
             {
                 Image(
                     bitmap = leftBorderImage,
@@ -115,7 +119,15 @@ fun GamePitchWithBorders() {
                 )
 
                 Column(
-                    modifier = Modifier.background(Color.Red).weight(1f).aspectRatio(13f / 11f).fillMaxSize()) {
+                    modifier = Modifier
+                        .background(Color.Red)
+                        .weight(1f)
+                        .aspectRatio(13f / 11f)
+                        .fillMaxSize()
+                        .onSizeChanged { newSize ->
+                            matchPanelSize = Dimension(newSize.width, newSize.height)
+                        }
+                ) {
                 }
 
 

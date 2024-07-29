@@ -12,7 +12,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.ai.logi
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ai_enemy.AiEnemy
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 open class AiEnemyLogic(override val entity: Enemy) : AiLogic(entity = entity) {
     override fun doInteract(e: Entity?) {

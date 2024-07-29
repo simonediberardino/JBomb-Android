@@ -1,4 +1,4 @@
-package game.domain.tasks
+package com.diberardino.jbomb.domain.tasks
 
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener

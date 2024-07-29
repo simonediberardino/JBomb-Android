@@ -2,7 +2,7 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_enti
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.properties.BomberEntityState
-import game.input.Command
+import com.diberardino.jbomb.input.Command
 
 class PlayerState(
         entity: BomberEntity,

@@ -5,11 +5,10 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.En
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.Player
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.LivesPowerUp
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.*
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.logic.PowerUpLogic
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.state.PowerUpState
-import game.presentation.ui.panels.game.PitchPanel
 
 /**
  * The abstract PowerUp class is a superclass for all power-ups in the game.

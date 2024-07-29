@@ -2,8 +2,8 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charac
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.logic.IMovingEntityLogic
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.input.Command
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.input.Command
 
 interface ICharacterEntityLogic : IMovingEntityLogic {
     fun isAlive() : Boolean

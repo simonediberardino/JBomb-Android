@@ -9,7 +9,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import kotlin.math.max
 
 class ExplosionState(

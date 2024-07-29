@@ -1,9 +1,9 @@
-package game.domain.level.info.imp
+package com.diberardino.jbomb.domain.events.level.info.imp
 
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
+import com.diberardino.jbomb.domain.events.level.info.model.DefaultLevelInfo
+import com.diberardino.jbomb.domain.events.level.levels.Level
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import game.domain.level.info.model.DefaultLevelInfo
-import game.domain.level.levels.Level
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
 
 abstract class LobbyLevelInfo(level: Level) : DefaultLevelInfo(level) {
     override val startEnemiesCount: Int get() = 0

@@ -1,14 +1,15 @@
 package com.diberardino.jbomb.domain.world.domain.entity.geo;
 
+import static com.diberardino.jbomb.ui.screens.MatchScreenKt.getMatchPanelSize;
+import static com.diberardino.jbomb.values.Dimensions.COMMON_DIVISOR;
 import static com.diberardino.jbomb.values.Dimensions.GRID_SIZE;
 import static com.diberardino.jbomb.values.Dimensions.PIXEL_UNIT;
-import static game.presentation.ui.panels.game.PitchPanel.GRID_SIZE;
 
 import com.diberardino.jbomb.JBomb;
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity;
+import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection;
 import com.diberardino.jbomb.values.Dimension;
 
-import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,11 +20,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
-
-import game.JBomb;
-import com.diberardino.jbomb.domain.world.domain.geo.Direction;
-import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection;
-import game.presentation.ui.panels.game.PitchPanel;
 
 public class Coordinates implements Comparable<Coordinates> {
     private final int x;
@@ -84,10 +80,9 @@ public class Coordinates implements Comparable<Coordinates> {
     }
 
     public static Coordinates roundedRandomCoords(Coordinates offset) {
-        //Dimension dimensions = JBomb.JBombFrame.getPitchPanel().getPanelDimensions();
+        Dimension dimensions = getMatchPanelSize();
 
-        //return roundCoordinates(new Coordinates(((int) (Math.random() * dimensions.getWidth())), ((int) (Math.random() * dimensions.getHeight()))), offset);
-        return new Coordinates(0, 0);
+        return roundCoordinates(new Coordinates(((int) (Math.random() * dimensions.getWidth())), ((int) (Math.random() * dimensions.getHeight()))), offset);
     }
 
     public static Coordinates roundCoordinates(Coordinates coords) {
@@ -95,8 +90,7 @@ public class Coordinates implements Comparable<Coordinates> {
     }
 
     public static Coordinates roundCoordinates(Coordinates coords, Coordinates offset) {
-        //return new Coordinates(((coords.getX() / GRID_SIZE) * GRID_SIZE + offset.getX()), ((coords.getY() / GRID_SIZE) * GRID_SIZE + offset.getY()));
-        return coords;
+        return new Coordinates(((coords.getX() / GRID_SIZE) * GRID_SIZE + offset.getX()), ((coords.getY() / GRID_SIZE) * GRID_SIZE + offset.getY()));
     }
 
     public static Coordinates generateRandomCoordinates() {
@@ -277,11 +271,11 @@ public class Coordinates implements Comparable<Coordinates> {
             return null;
         }
 
-        if ((d.getWidth() >= PitchPanel.DIMENSION.getWidth() / GRID_SIZE)) {
+        if ((d.getWidth() >= getMatchPanelSize().getWidth() / GRID_SIZE)) {
             return null;
         }
 
-        if (d.getHeight() >= PitchPanel.DIMENSION.getHeight() / GRID_SIZE) {
+        if (d.getHeight() >= getMatchPanelSize().getHeight() / GRID_SIZE) {
             return null;
         }
 
@@ -442,7 +436,7 @@ public class Coordinates implements Comparable<Coordinates> {
 
         ArrayList<Coordinates> arrayCoordinates = getAllCoordinates(Coordinates.roundCoordinates(nextOccupiedCoords), GRID_SIZE);
         // Get all the blocks and entities in the game
-        List<Entity> entities = JBomb.match.getEntities();
+        List<Entity> entities = JBomb.INSTANCE.getMatch().getEntities();
 
         return entities.parallelStream().filter(e -> arrayCoordinates.stream().anyMatch(coords -> doesCollideWith(coords, e))).collect(Collectors.toList());
     }
@@ -525,8 +519,8 @@ public class Coordinates implements Comparable<Coordinates> {
         topLeft = Coordinates.roundCoordinates(topLeft);
         bottomRight = Coordinates.roundCoordinates(bottomRight);
 
-        for (int x = topLeft.getX(); x <= bottomRight.getX(); x += PitchPanel.GRID_SIZE) {
-            for (int y = topLeft.getY(); y <= bottomRight.getY(); y += PitchPanel.GRID_SIZE) {
+        for (int x = topLeft.getX(); x <= bottomRight.getX(); x += GRID_SIZE) {
+            for (int y = topLeft.getY(); y <= bottomRight.getY(); y += GRID_SIZE) {
                 output.add(Coordinates.roundCoordinates(new Coordinates(x, y)));
             }
         }
@@ -543,9 +537,9 @@ public class Coordinates implements Comparable<Coordinates> {
             case LEFT:
                 return getAllBlocksInArea(e.getInfo().getPosition().plus(new Coordinates(-GRID_SIZE * depth + 1, 0)), e.getInfo().getPosition().plus(new Coordinates(1, e.getState().getSize() - 1)));
             case DOWN:
-                return Coordinates.getAllBlocksInArea(e.getInfo().getPosition().plus(new Coordinates(0, e.getState().getSize())), e.getInfo().getPosition().plus(new Coordinates(e.getState().getSize() - 1, e.getState().getSize() + PitchPanel.GRID_SIZE * depth - 1)));
+                return Coordinates.getAllBlocksInArea(e.getInfo().getPosition().plus(new Coordinates(0, e.getState().getSize())), e.getInfo().getPosition().plus(new Coordinates(e.getState().getSize() - 1, e.getState().getSize() + GRID_SIZE * depth - 1)));
             case UP:
-                return getAllBlocksInArea(e.getInfo().getPosition().plus(new Coordinates(-1, -(PitchPanel.GRID_SIZE * depth - 1))), e.getInfo().getPosition().plus(new Coordinates(e.getState().getSize() - 1, -1)));
+                return getAllBlocksInArea(e.getInfo().getPosition().plus(new Coordinates(-1, -(GRID_SIZE * depth - 1))), e.getInfo().getPosition().plus(new Coordinates(e.getState().getSize() - 1, -1)));
             case RIGHT:
                 return getAllBlocksInArea(e.getInfo().getPosition().plus(new Coordinates(e.getState().getSize(), 0)), e.getInfo().getPosition().plus(new Coordinates(e.getState().getSize() + GRID_SIZE * depth - 1, e.getState().getSize() - 1)));
             default:

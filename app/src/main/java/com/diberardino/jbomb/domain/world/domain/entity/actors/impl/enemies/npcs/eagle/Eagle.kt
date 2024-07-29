@@ -7,7 +7,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charact
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.properties.OrbEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.flying_enemy.FlyingEnemy
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 class Eagle : FlyingEnemy {
     constructor(id: Long) : super(id)

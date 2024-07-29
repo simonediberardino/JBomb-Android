@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy
 
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
@@ -21,7 +21,7 @@ abstract class Enemy : Character {
     override val state: EnemyEntityState = EnemyEntityState(entity = this)
 
     internal object DEFAULT {
-        val SIZE = PitchPanel.GRID_SIZE
+        val SIZE = GRID_SIZE
         val INTERACTION_ENTITIES: MutableSet<Class<out Entity>>  // Or player?
             get() = hashSetOf(BomberEntity::class.java, AbstractExplosion::class.java)
         val OBSTACLES: MutableSet<Class<out Entity>>

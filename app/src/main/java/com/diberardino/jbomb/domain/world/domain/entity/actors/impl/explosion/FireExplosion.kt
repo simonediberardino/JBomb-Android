@@ -6,9 +6,9 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.ab
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.graphics.ExplosionImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.state.ExplosionProperties
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.utility.Paths.entitiesFolder
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 class FireExplosion : AbstractExplosion {
     constructor(

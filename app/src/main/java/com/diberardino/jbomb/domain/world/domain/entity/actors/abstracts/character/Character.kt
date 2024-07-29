@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character
 
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import game.audio.SoundModel
+import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
 import com.diberardino.jbomb.values.DrawPriority
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
@@ -9,13 +9,12 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charact
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.mappers.dtoToEntityNetwork
-import game.network.entity.EntityNetwork
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.dev.Extensions.getOrTrim
-import game.utils.dev.Log
-import game.values.DrawPriority
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.mappers.dtoToEntityNetwork
+import com.diberardino.jbomb.network.entity.EntityNetwork
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
+import com.diberardino.jbomb.utils.dev.Log
 
 /**
  * Represents a character in the game, which can move and interact with the environment.
@@ -43,7 +42,7 @@ abstract class Character : MovingEntity {
     override fun updateInfo(info: Map<String, String>) {
         super.updateInfo(info)
 
-        Log.e("Updating info ${this} $info")
+        Log.e(this.javaClass.simpleName, "Updating info ${this} $info")
 
         val name = info.getOrTrim("name")
         name?.let {

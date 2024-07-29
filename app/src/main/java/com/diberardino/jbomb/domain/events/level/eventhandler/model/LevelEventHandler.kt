@@ -1,4 +1,4 @@
-package game.domain.level.eventhandler.model
+package com.diberardino.jbomb.domain.level.eventhandler.model
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 

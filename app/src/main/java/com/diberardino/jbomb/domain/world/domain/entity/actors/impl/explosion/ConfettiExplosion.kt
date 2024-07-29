@@ -7,8 +7,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.utility.Paths.enemiesFolder
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 class ConfettiExplosion : AbstractExplosion {
     constructor(

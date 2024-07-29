@@ -12,9 +12,9 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explo
 import com.diberardino.jbomb.domain.events.game.UpdateCurrentAvailableItemsEvent
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.handler.ExplosionHandler
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.PistolPowerUp
-import game.utils.file_system.Paths.itemsPath
-import game.utils.Utility.timePassed
-import game.utils.time.now
+import com.diberardino.jbomb.utils.file_system.Paths.itemsPath
+import com.diberardino.jbomb.utils.Utility.timePassed
+import com.diberardino.jbomb.utils.time.now
 
 class PistolItem : UsableItem(), Explosive {
     private var bullets = 5

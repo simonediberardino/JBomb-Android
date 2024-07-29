@@ -1,7 +1,12 @@
 package com.diberardino.jbomb.utility
 
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.util.DisplayMetrics
+import android.util.Log
 import com.diberardino.jbomb.JBombApplication
+import com.diberardino.jbomb.data.cache.Cache
 import com.diberardino.jbomb.values.Dimension
 import com.diberardino.jbomb.values.Dimensions
 
@@ -59,5 +64,29 @@ object Utility {
 
     fun px(dim: Double): Double = dim * (screenSize.width / Dimensions.DEFAULT_SCREEN_SIZE.width)
 
+
+    fun loadImage(context: Context, fileName: String): Bitmap {
+        var fileName = fileName
+        val cache = Cache.instance
+
+        if (cache.hasInCache(fileName)) {
+            return cache.queryCache(fileName) ?: throw RuntimeException()
+        }
+
+        // Adjust fileName if necessary
+        fileName = fileName.replace("/src", "")
+        Log.i(this.javaClass.simpleName, "Loading $fileName")
+
+        val image: Bitmap = try {
+            context.assets.open(fileName).use { inputStream ->
+                BitmapFactory.decodeStream(inputStream) ?: throw RuntimeException()
+            }
+        } catch (e: Exception) {
+            throw RuntimeException("Failed to load image: $fileName", e)
+        }
+
+        cache.saveInCache(fileName, image)
+        return image
+    }
 
 }

@@ -1,14 +1,13 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.properties
 
 import com.diberardino.jbomb.values.DrawPriority
-import game.audio.SoundModel
+import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.Orb
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.domain.world.types.EntityTypes
-import game.values.DrawPriority
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 open class OrbEntityProperties(
     types: EntityTypes,

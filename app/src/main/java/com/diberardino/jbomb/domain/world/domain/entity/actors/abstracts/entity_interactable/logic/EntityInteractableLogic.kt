@@ -7,11 +7,10 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.lo
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates.getNewCoordinatesListOnDirection
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.network.events.forward.AttackEntityEventForwarder
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.Utility.timePassed
-import game.utils.time.now
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.network.events.forward.AttackEntityEventForwarder
+import com.diberardino.jbomb.utils.Utility.timePassed
+import com.diberardino.jbomb.utils.time.now
 
 abstract class EntityInteractableLogic(
         override val entity: EntityInteractable
@@ -153,7 +152,7 @@ abstract class EntityInteractableLogic(
                 entity.info.position,
                 direction,
                 stepSize,
-                PitchPanel.GRID_SIZE / 3 / 2,
+                GRID_SIZE / 3 / 2,
                 entity.state.size
         )
 

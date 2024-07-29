@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.properties
 
-import game.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
@@ -11,7 +11,7 @@ open class BlockEntityState(
     isImmune: Boolean = Entity.DEFAULT.IMMUNE,
     state: State? = Entity.DEFAULT.STATE,
     isInvisible: Boolean = Entity.DEFAULT.IS_INVISIBLE,
-    size: Int = PitchPanel.GRID_SIZE,
+    size: Int = GRID_SIZE,
     alpha: Float = Entity.DEFAULT.ALPHA,
     interactionEntities: MutableSet<Class<out Entity>> = Entity.DEFAULT.INTERACTION_ENTITIES,
     lastImageUpdate: Long = Entity.DEFAULT.LAST_IMAGE_UPDATE

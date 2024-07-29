@@ -1,10 +1,10 @@
-package game.domain.level.levels.lobby
+package com.diberardino.jbomb.domain.level.levels.lobby
 
-import game.JBomb
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.domain.events.level.gamehandler.imp.DefaultGameHandler
+import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
+import com.diberardino.jbomb.domain.events.level.levels.StoryLevel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.Player
-import game.domain.level.gamehandler.imp.DefaultGameHandler
-import game.domain.level.gamehandler.model.GameHandler
-import game.domain.level.levels.StoryLevel
 
 abstract class LobbyLevel : StoryLevel() {
     override val gameHandler: GameHandler

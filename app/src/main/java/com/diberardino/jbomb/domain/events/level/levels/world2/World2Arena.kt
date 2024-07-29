@@ -1,4 +1,4 @@
-package game.domain.level.levels.world2
+package com.diberardino.jbomb.domain.level.levels.world2
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.Clown
@@ -6,10 +6,10 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.fast_enemy.FastPurpleBall
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.tank.TankEnemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import game.domain.level.levels.ArenaLevel
-import game.domain.level.levels.Level
-import game.domain.level.info.model.DefaultArenaLevelInfo
-import game.domain.level.info.model.LevelInfo
+import com.diberardino.jbomb.domain.events.level.levels.ArenaLevel
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.info.model.DefaultArenaLevelInfo
+import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.skeleton.SkeletonEnemy
 
 class World2Arena : ArenaLevel() {

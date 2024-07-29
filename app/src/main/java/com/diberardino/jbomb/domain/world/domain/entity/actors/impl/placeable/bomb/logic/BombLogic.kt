@@ -1,14 +1,14 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.logic
 
-import game.JBomb
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.logic.BlockEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.FireExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.handler.ExplosionHandler
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.network.events.forward.BombExplodedEventForwarder
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.network.events.forward.BombExplodedEventForwarder
 import kotlinx.coroutines.launch
 import java.util.*
 

@@ -29,7 +29,7 @@ abstract class MysteryBoxLogic(override val entity: MysteryBox) : BlockEntityLog
 
     override fun onMouseClickInteraction() {
         //val distanceToUser = entity.info.position.distanceTo(entity.state.buyer()!!.info.position)
-        //if (distanceToUser >= PitchPanel.GRID_SIZE * 1.5) {
+        //if (distanceToUser >= GRID_SIZE * 1.5) {
         //    return
         //}
 

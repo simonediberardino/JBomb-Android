@@ -1,6 +1,6 @@
-package com.diberardino.jbomb.domain.world.domain.geo
+package com.diberardino.jbomb.domain.world.domain.entity.geo
 
-import game.input.Command
+import com.diberardino.jbomb.input.Command
 
 enum class Direction {
     DOWN, LEFT, UP, RIGHT;

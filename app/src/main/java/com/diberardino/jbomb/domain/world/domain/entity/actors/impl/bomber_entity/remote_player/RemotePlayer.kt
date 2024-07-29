@@ -3,8 +3,8 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_enti
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.properties.BomberEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.graphics.RemotePlayerImageModel
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 
 class RemotePlayer(coordinates: Coordinates?, skinId: Int) : BomberEntity(coordinates = coordinates) {
     constructor(coordinates: Coordinates?, id: Long, skinId: Int = 0) : this(coordinates = coordinates, skinId = skinId) {

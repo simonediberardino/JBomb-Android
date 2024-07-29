@@ -1,4 +1,4 @@
-package game.network.entity
+package com.diberardino.jbomb.network.entity
 
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates

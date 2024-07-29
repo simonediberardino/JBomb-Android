@@ -1,17 +1,17 @@
 package com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base
 
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import game.JBomb
-import game.data.data.DataInputOutput
-import game.domain.level.levels.Level
-import game.domain.level.levels.world1.World1Level1
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.data.data.DataInputOutput
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.domain.level.levels.world1.World1Level1
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.base.Portal
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.base.Portal
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.base.logic.PortalLogic
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.state.WorldPortalState
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import game.utils.file_system.Paths.getWorldSelectorPortalPath
+import com.diberardino.jbomb.utils.file_system.Paths.getWorldSelectorPortalPath
 import java.lang.reflect.InvocationTargetException
 import java.util.*
 

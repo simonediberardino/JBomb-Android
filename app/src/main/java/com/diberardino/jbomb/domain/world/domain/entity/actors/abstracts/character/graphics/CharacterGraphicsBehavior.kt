@@ -3,9 +3,9 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charac
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.utils.Utility
-import game.utils.time.now
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.utils.Utility
+import com.diberardino.jbomb.utils.time.now
 import java.awt.image.Bitmap
 
 open class CharacterGraphicsBehavior(open val entity: Character) : DefaultEntityGraphicsBehavior(), ICharacterGraphicsBehavior {

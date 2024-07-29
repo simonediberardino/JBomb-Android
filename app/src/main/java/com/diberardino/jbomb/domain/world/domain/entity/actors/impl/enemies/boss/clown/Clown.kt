@@ -13,9 +13,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.properties.ClownState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 import java.util.*
 
 /**

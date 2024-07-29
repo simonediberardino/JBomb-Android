@@ -1,12 +1,12 @@
-package game.domain.level.levels.world1
+package com.diberardino.jbomb.domain.level.levels.world1
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.yellow_ball.YellowBall
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.zombie.Zombie
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import game.domain.level.levels.Level
-import game.domain.level.levels.StoryLevel
-import game.domain.level.info.model.LevelInfo
-import game.domain.level.info.imp.World1LevelInfo
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.domain.events.level.levels.StoryLevel
+import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
+import com.diberardino.jbomb.domain.events.level.info.imp.World1LevelInfo
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.skeleton.SkeletonEnemy
 
 class World1Level4 : StoryLevel() {

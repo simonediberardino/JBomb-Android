@@ -6,8 +6,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.logic.GhostBossLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.state.GhostBossProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.state.GhostBossState
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.domain.world.types.EntityTypes
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.domain.world.types.EntityTypes
 import java.util.*
 
 class GhostBoss : Boss {

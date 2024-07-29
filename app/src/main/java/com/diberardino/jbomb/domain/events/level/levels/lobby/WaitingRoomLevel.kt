@@ -1,8 +1,8 @@
-package game.domain.level.levels.lobby
+package com.diberardino.jbomb.domain.level.levels.lobby
 
-import game.localization.Localization
-import game.presentation.ui.viewelements.misc.ToastHandler
-import game.utils.dev.Log
+import com.diberardino.jbomb.domain.events.level.levels.lobby.IslandLevel
+import com.diberardino.jbomb.localization.Localization
+import com.diberardino.jbomb.presentation.ui.viewelements.misc.ToastHandler
 
 class WaitingRoomLevel : IslandLevel() {
     override fun generateLevel() {

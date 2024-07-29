@@ -2,7 +2,7 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_enti
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.remote_player.RemotePlayer
-import game.utils.file_system.Paths
+import com.diberardino.jbomb.utils.file_system.Paths
 
 class RemotePlayerImageModel(
         entity: RemotePlayer

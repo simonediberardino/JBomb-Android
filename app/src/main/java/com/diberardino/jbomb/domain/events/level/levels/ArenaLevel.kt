@@ -1,29 +1,28 @@
-package game.domain.level.levels
+package com.diberardino.jbomb.domain.events.level.levels
 
-import game.JBomb
-import game.data.data.DataInputOutput
+import android.util.Log
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.game.RoundPassedGameEvent
 import com.diberardino.jbomb.domain.events.game.UpdateCurrentAvailableItemsEvent
 import com.diberardino.jbomb.domain.events.level.behavior.GameBehavior
 import com.diberardino.jbomb.domain.events.level.behavior.RespawnDeadPlayersBehavior
-import game.domain.level.eventhandler.imp.DefaultLevelEventHandler
-import game.domain.level.eventhandler.model.LevelEventHandler
-import game.domain.level.gamehandler.imp.DefaultGameHandler
-import game.domain.level.gamehandler.model.GameHandler
-import game.domain.level.info.model.DefaultArenaLevelInfo
-import game.localization.Localization
-import game.presentation.ui.viewelements.misc.ToastHandler
-import game.utils.dev.Log
-import java.awt.event.ActionEvent
+import com.diberardino.jbomb.domain.events.level.gamehandler.imp.DefaultGameHandler
+import com.diberardino.jbomb.domain.events.level.info.model.DefaultArenaLevelInfo
+import com.diberardino.jbomb.domain.level.eventhandler.imp.DefaultLevelEventHandler
+import com.diberardino.jbomb.domain.level.eventhandler.model.LevelEventHandler
+import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
+import com.diberardino.jbomb.localization.Localization
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.concurrent.atomic.AtomicReference
-import javax.swing.JPanel
-import javax.swing.Timer
 
 abstract class ArenaLevel : Level() {
     override val gameHandler: GameHandler
         get() = object : DefaultGameHandler(this) {
             override fun spawnMysteryBox() {
-                Log.e("Destroyable blocks current round ${currentRound.get()}")
+                Log.e(this.javaClass.simpleName, "Destroyable blocks current round ${currentRound.get()}")
 
                 if (currentRound.get() != 0) {
                     return
@@ -33,7 +32,7 @@ abstract class ArenaLevel : Level() {
             }
 
             override fun generateDestroyableBlock() {
-                Log.e("Destroyable blocks current round ${currentRound.get()}")
+                Log.e(this.javaClass.simpleName, "Destroyable blocks current round ${currentRound.get()}")
                 if (currentRound.get() != 0) {
                     return
                 }
@@ -91,13 +90,13 @@ abstract class ArenaLevel : Level() {
                 if (currentRound.get() > 1) {
                     super.onRoundPassedGameEvent()
                 }
-                ToastHandler.getInstance().show(Localization.get(Localization.STARTING_ROUND).replace("%round%", currentRound.get().toString()))
-                JBomb.match.inventoryElementControllerRounds?.setNumItems(currentRound.get())
+                //ToastHandler.getInstance().show(Localization.get(Localization.STARTING_ROUND).replace("%round%", currentRound.get().toString()))
+                //JBomb.match.inventoryElementControllerRounds?.setNumItems(currentRound.get())
             }
 
             override fun onDeathGameEvent() {
-                DataInputOutput.getInstance().increaseDeaths()
-                DataInputOutput.getInstance().decreaseScore(1000)
+                //DataInputOutput.getInstance().increaseDeaths()
+                //DataInputOutput.getInstance().decreaseScore(1000)
             }
 
             override fun onAllEnemiesEliminated() {
@@ -115,12 +114,11 @@ abstract class ArenaLevel : Level() {
 
                 gameBehavior.invoke()
 
-                val t = Timer(ARENA_ROUND_LOADING_TIMER) { _: ActionEvent? ->
+                // Use a coroutine to delay the game start
+                CoroutineScope(Dispatchers.Main).launch {
+                    delay(ARENA_ROUND_LOADING_TIMER.toLong())
                     gameHandler.startLevel()
                 }
-
-                t.isRepeats = false
-                t.start()
             }
         }
 
@@ -128,8 +126,8 @@ abstract class ArenaLevel : Level() {
     protected val isSpecialRound: Boolean
         get() = currentRound.get() % 5 == 0 && currentRound.get() > 1 && !shouldSpawnBoss()
 
-    override fun start(field: JPanel) {
-        super.start(field)
+    override fun start() {
+        super.start()
         if (currentRound.get() == 1) {
             firstStart()
         }

@@ -1,20 +1,20 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.logic
 
-import game.JBomb
-import game.audio.AudioManager
-import game.audio.SoundModel
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.audio.AudioManager
+import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.events.level.behavior.GameBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.logic.BossEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.GhostBoss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ghost_enemy.GhostEnemy
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.Utility
-import game.utils.dev.Log
-import game.utils.time.now
-import game.utils.ui.GradientCallbackHandler
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.utils.Utility
+import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utils.time.now
+import com.diberardino.jbomb.utils.ui.GradientCallbackHandler
 import java.awt.event.ActionEvent
 import java.util.function.Consumer
 import javax.swing.SwingUtilities
@@ -41,7 +41,7 @@ class GhostBossLogic(override val entity: GhostBoss) : BossEntityLogic(entity = 
      */
     override fun disappearAndReappear() {
         synchronized((lock2 as Any)) {
-            Log.e("Running disappear = ${!entity.state.isInvisibleTaskRunning}")
+            Log.e(this.javaClass.simpleName, "Running disappear = ${!entity.state.isInvisibleTaskRunning}")
             if (entity.state.isInvisibleTaskRunning) {
                 // If an invisible task is already running, exit the method.
                 return

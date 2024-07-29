@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.logic
 
-import game.JBomb
-import game.audio.SoundModel
+import com.diberardino.jbomb.JBomb
+import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.events.level.behavior.GameBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
@@ -14,13 +14,12 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.Co
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.handler.ExplosionHandler
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.Utility
-import game.utils.Utility.timePassed
-import game.utils.dev.Log
-import game.utils.time.now
+import com.diberardino.jbomb.utils.Utility
+import com.diberardino.jbomb.utils.Utility.timePassed
+import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utils.time.now
 
 class ClownLogic(
         override val entity: Clown
@@ -110,7 +109,7 @@ class ClownLogic(
         when (d) {
             Direction.RIGHT, Direction.LEFT -> {
                 parallelOffset = 0
-                inwardOffset = Character.size / 3 - PitchPanel.GRID_SIZE / 2
+                inwardOffset = Character.size / 3 - GRID_SIZE / 2
             }
 
             else -> {}
@@ -152,12 +151,12 @@ class ClownLogic(
      * Throws a hat in a random enhanced direction.
      */
     override fun throwHat() {
-        Log.e("throwing hat")
+        Log.e(this.javaClass.simpleName, "throwing hat")
         val direction = EnhancedDirection.randomDirectionTowardsCenter(entity)
         val coordinates = Coordinates.fromDirectionToCoordinateOnEntity(entity, direction, 0)
 
         val hat: Entity = Hat(coordinates, direction)
-        Log.e("Spawning hat ")
+        Log.e(this.javaClass.simpleName, "Spawning hat ")
 
         entity.state.hatThrowTime = now()
         entity.state.hasHat = false

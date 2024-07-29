@@ -4,11 +4,11 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.En
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.base.PlaceableEntity
-import game.domain.world.types.EntityTypes
-import game.network.entity.BomberEntityNetwork
-import game.network.entity.CharacterNetwork
-import game.network.entity.EntityNetwork
-import game.network.entity.PlaceableEntityNetwork
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.network.entity.BomberEntityNetwork
+import com.diberardino.jbomb.network.entity.CharacterNetwork
+import com.diberardino.jbomb.network.entity.EntityNetwork
+import com.diberardino.jbomb.network.entity.PlaceableEntityNetwork
 
 fun EntityTypes.toEntity(id: Long, extra:  Map<String, String>? = null) : Entity? {
     return EntityFactory.instance.toEntity(this, id, extra)

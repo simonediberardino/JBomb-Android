@@ -1,4 +1,4 @@
-package game.domain.tasks.observer
+package com.diberardino.jbomb.domain.tasks.observer
 
 open class Observable2 {
     @JvmField

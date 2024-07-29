@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base
 
-import game.audio.SoundModel
+import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterGraphicsBehavior
@@ -16,13 +16,14 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.myster
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import game.mappers.dtoToEntityNetwork
-import game.network.entity.EntityNetwork
-import game.presentation.ui.panels.game.PitchPanel
-import game.utils.dev.Extensions.getOrTrim
-import game.utils.dev.Log
+import com.diberardino.jbomb.mappers.dtoToEntityNetwork
+import com.diberardino.jbomb.network.entity.EntityNetwork
+import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
+import com.diberardino.jbomb.utils.dev.Log
 
 abstract class BomberEntity : Character, Explosive {
     constructor() : super()
@@ -48,7 +49,7 @@ abstract class BomberEntity : Character, Explosive {
         currentBombs?.let { state.currentBombs = it }
         skinId?.let { properties.skinId = it }
         hp?.let {
-            Log.e("Updating health ${hp} $hp")
+            Log.e(this.javaClass.simpleName, "Updating health ${hp} $hp")
             state.hp = it
         }
     }
@@ -78,7 +79,7 @@ abstract class BomberEntity : Character, Explosive {
 
     companion object {
         const val MAX_BOMB_CAN_HOLD = 10
-        val SPAWN_OFFSET = Coordinates((PitchPanel.GRID_SIZE - Character.DEFAULT.SIZE) / 2, PitchPanel.GRID_SIZE - size)
+        val SPAWN_OFFSET = Coordinates((GRID_SIZE - Character.DEFAULT.SIZE) / 2, GRID_SIZE - size)
     }
 
     internal object DEFAULT {

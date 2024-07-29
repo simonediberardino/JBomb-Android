@@ -1,12 +1,12 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.logic
 
-import game.domain.tasks.observer.Observable2
+import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.logic.MovingEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
-import com.diberardino.jbomb.domain.world.domain.geo.Direction
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 
 class ExplosionLogic(
         override val entity: AbstractExplosion

@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal
 
-import game.JBomb
+import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.ai.AiEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.ai.logic.AiLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal.state.AnimalEntityState
@@ -13,6 +13,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.hard_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.WorldPortal
 
