@@ -2,18 +2,18 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base
 
 import android.graphics.Bitmap
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.mappers.dtoToEntityNetwork
-import com.diberardino.jbomb.misc.RunnablePar
-import com.diberardino.jbomb.utility.Extensions.getOrTrim
-import com.diberardino.jbomb.values.DrawPriority
+import com.diberardino.jbomb.domain.events.models.RunnablePar
 import com.diberardino.jbomb.domain.tasks.GameTickerObserver
 import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.UiState
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.mappers.dtoToEntityNetwork
 import com.diberardino.jbomb.network.entity.EntityNetwork
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
+import com.diberardino.jbomb.values.DrawPriority
 import java.util.Objects
 import java.util.UUID
 

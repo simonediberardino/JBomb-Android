@@ -9,6 +9,7 @@ import com.diberardino.jbomb.JBombApplication
 import com.diberardino.jbomb.data.cache.Cache
 import com.diberardino.jbomb.values.Dimension
 import com.diberardino.jbomb.values.Dimensions
+import java.io.IOException
 
 
 /**
@@ -89,4 +90,11 @@ object Utility {
         return image
     }
 
+    fun fileExists(filePath: String): Boolean = try {
+        JBombApplication.context.assets.open(filePath).use {
+            true
+        }
+    } catch (e: IOException) {
+        false
+    }
 }

@@ -5,7 +5,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IE
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.PeriodicGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.WorldPortal
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.state.WorldPortalState
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.imp.world_base.state.WorldPortalState
 import com.diberardino.jbomb.domain.world.types.EntityTypes
 import com.diberardino.jbomb.values.Dimension
 import com.diberardino.jbomb.values.Dimensions.GRID_SIZE

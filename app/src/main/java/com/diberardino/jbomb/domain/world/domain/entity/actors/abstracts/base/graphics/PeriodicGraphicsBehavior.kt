@@ -1,10 +1,10 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics
 
+import android.graphics.Bitmap
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
-import com.diberardino.jbomb.utils.Utility
+import com.diberardino.jbomb.utility.Utility
 import kotlinx.coroutines.launch
-import java.awt.image.Bitmap
 
 abstract class PeriodicGraphicsBehavior: DefaultEntityGraphicsBehavior() {
     abstract val imagesCount: Int

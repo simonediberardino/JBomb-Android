@@ -10,19 +10,19 @@ import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
 import com.diberardino.jbomb.domain.level.eventhandler.imp.DefaultLevelEventHandler
 import com.diberardino.jbomb.domain.level.eventhandler.model.LevelEventHandler
 import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
-import com.diberardino.jbomb.domain.level.levels.lobby.WorldSelectorLevel
-import com.diberardino.jbomb.domain.level.levels.world1.World1Arena
-import com.diberardino.jbomb.domain.level.levels.world1.World1Level1
-import com.diberardino.jbomb.domain.level.levels.world1.World1Level2
-import com.diberardino.jbomb.domain.level.levels.world1.World1Level3
-import com.diberardino.jbomb.domain.level.levels.world1.World1Level4
-import com.diberardino.jbomb.domain.level.levels.world1.World1Level5
-import com.diberardino.jbomb.domain.level.levels.world2.World2Arena
-import com.diberardino.jbomb.domain.level.levels.world2.World2Level1
-import com.diberardino.jbomb.domain.level.levels.world2.World2Level2
-import com.diberardino.jbomb.domain.level.levels.world2.World2Level3
-import com.diberardino.jbomb.domain.level.levels.world2.World2Level4
-import com.diberardino.jbomb.domain.level.levels.world2.World2Level5
+import com.diberardino.jbomb.domain.events.level.levels.lobby.WorldSelectorLevel
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Arena
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level1
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level2
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level3
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level4
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level5
+import com.diberardino.jbomb.domain.events.level.levels.world2.World2Arena
+import com.diberardino.jbomb.domain.events.level.levels.world2.World2Level1
+import com.diberardino.jbomb.domain.events.level.levels.world2.World2Level2
+import com.diberardino.jbomb.domain.events.level.levels.world2.World2Level3
+import com.diberardino.jbomb.domain.events.level.levels.world2.World2Level4
+import com.diberardino.jbomb.domain.events.level.levels.world2.World2Level5
 import java.util.Optional
 
 /**

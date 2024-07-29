@@ -1,13 +1,12 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block
 
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityImageModel
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.logic.BlockEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.logic.IBlockEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.properties.BlockEntityState
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class Block : Entity {
     constructor(id: Long) : super(id)

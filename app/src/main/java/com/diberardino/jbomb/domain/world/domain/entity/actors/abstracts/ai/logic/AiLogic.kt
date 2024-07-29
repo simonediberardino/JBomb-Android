@@ -8,8 +8,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charact
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ai_enemy.AiEnemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ai_enemy.logic.IAiLogic
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
-import com.diberardino.jbomb.utils.Utility
-import com.diberardino.jbomb.utils.dev.XMLUtils
+import com.diberardino.jbomb.utility.Utility
 
 open class AiLogic(override val entity: Character) : CharacterEntityLogic(entity = entity),
     IAiLogic {
@@ -59,7 +58,8 @@ open class AiLogic(override val entity: Character) : CharacterEntityLogic(entity
     }
 
     override fun process() {
-        if ("true" == XMLUtils.readConfig("bots_move")) {
+        val botsMove = true // TODO
+        if (botsMove) {
             move(chooseDirection(false))
         }
     }

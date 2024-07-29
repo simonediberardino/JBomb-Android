@@ -1,25 +1,29 @@
 package com.diberardino.jbomb.domain.tasks
 
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
-import javax.swing.Timer
+import com.diberardino.jbomb.JBomb
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 class GarbageCollectorTask {
-    private val taskPerformer = ActionListener { evt: ActionEvent? ->
-        System.gc()
-    }
 
-    private val timer = Timer(DELAY_MS, taskPerformer)
+    private var job: Job? = null
 
     fun start() {
-        timer.start()
+        job = JBomb.match.scope.launch {
+            while (isActive) {
+                delay(DELAY_MS)
+                System.gc()
+            }
+        }
     }
 
     fun stop() {
-        timer.stop()
+        job?.cancel()
     }
 
     companion object {
-        private const val DELAY_MS = 5 * 1000
+        private const val DELAY_MS = 5 * 1000L
     }
 }

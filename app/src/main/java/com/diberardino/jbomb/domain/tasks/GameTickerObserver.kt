@@ -2,8 +2,8 @@ package com.diberardino.jbomb.domain.tasks
 
 import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.tasks.observer.Observer2
-import com.diberardino.jbomb.utils.time.now
-import com.diberardino.jbomb.utils.time.timeunit
+import com.diberardino.jbomb.utility.now
+import com.diberardino.jbomb.utility.timeunit
 
 abstract class GameTickerObserver : Observer2 {
     var lastUpdate = 0L

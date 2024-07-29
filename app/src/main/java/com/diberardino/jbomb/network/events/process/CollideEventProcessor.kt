@@ -2,8 +2,7 @@ package com.diberardino.jbomb.network.events.process
 
 import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.domain.events.models.HttpEvent
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class CollideEventProcessor: HttpEvent {
     override fun invoke(vararg extras: Any) {

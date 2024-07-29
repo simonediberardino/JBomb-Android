@@ -1,19 +1,18 @@
 package com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base
 
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.data.data.DataInputOutput
 import com.diberardino.jbomb.domain.events.level.levels.Level
-import com.diberardino.jbomb.domain.level.levels.world1.World1Level1
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level1
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.base.Portal
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.base.logic.PortalLogic
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.state.WorldPortalState
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.imp.world_base.state.WorldPortalState
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import com.diberardino.jbomb.utils.file_system.Paths.getWorldSelectorPortalPath
+import com.diberardino.jbomb.utility.Paths.getWorldSelectorPortalPath
 import java.lang.reflect.InvocationTargetException
-import java.util.*
+import java.util.Optional
 
 abstract class WorldPortal(coordinates: Coordinates?, val worldId: Int) : Portal(coordinates) {
     constructor(worldId: Int) : this(null, worldId)
@@ -31,8 +30,8 @@ abstract class WorldPortal(coordinates: Coordinates?, val worldId: Int) : Portal
             super.doApply(player)
             try {
                 // Get the ID of the last level and last world from the player data object
-                val savedLastLevelId = DataInputOutput.getInstance().lastLevelId
-                val savedLastWorldId = DataInputOutput.getInstance().lastWorldId
+                val savedLastLevelId = 1//DataInputOutput.getInstance().lastLevelId
+                val savedLastWorldId = 1//DataInputOutput.getInstance().lastWorldId
 
                 // Get the class of the first level for the current world from the ID_TO_FIRST_LEVEL_MAP
                 val firstLevelOfCurrWorld = Level.ID_TO_FIRST_LEVEL_MAP.getOrDefault(worldId, World1Level1::class.java)
@@ -52,9 +51,9 @@ abstract class WorldPortal(coordinates: Coordinates?, val worldId: Int) : Portal
                     firstLevelOfCurrWorld.getConstructor().newInstance()
                 }
 
-                JBomb.destroyLevel(true)
+                JBomb.match.destroy(true)
                 // Start the level with the obtained level instance
-                JBomb.startLevel(levelToStart, JBomb.match.onlineGameHandler)
+                //JBomb.startLevel(levelToStart, JBomb.match.onlineGameHandler)
             } catch (e: InstantiationException) {
                 // Print the stack trace if there is an exception
                 e.printStackTrace()

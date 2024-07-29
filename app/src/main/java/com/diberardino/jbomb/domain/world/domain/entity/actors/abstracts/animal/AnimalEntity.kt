@@ -14,7 +14,6 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entit
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.WorldPortal
 
 abstract class AnimalEntity: AiEntity {

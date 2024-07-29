@@ -1,5 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base
 
+import android.util.Log
 import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
@@ -17,13 +18,11 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.ab
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 import com.diberardino.jbomb.mappers.dtoToEntityNetwork
 import com.diberardino.jbomb.network.entity.EntityNetwork
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class BomberEntity : Character, Explosive {
     constructor() : super()

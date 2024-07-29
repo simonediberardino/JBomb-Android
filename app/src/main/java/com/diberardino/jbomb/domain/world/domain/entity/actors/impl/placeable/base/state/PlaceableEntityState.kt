@@ -4,7 +4,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.En
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.properties.BlockEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class PlaceableEntityState(
     entity: Entity,

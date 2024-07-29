@@ -2,10 +2,10 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.logic.EntityInteractableLogic
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
-import java.util.*
+import com.diberardino.jbomb.values.Dimensions.PIXEL_UNIT
+import java.util.LinkedList
 
 abstract class MovingEntityLogic(
         override val entity: EntityInteractable
@@ -29,7 +29,7 @@ abstract class MovingEntityLogic(
             val newCoordinates = Coordinates.getNewCoordinatesListOnDirection(
                     entity.info.position,
                     direction,
-                    PitchPanel.PIXEL_UNIT,
+                    PIXEL_UNIT,
                     entity.state.size / 2,
                     entity.state.size
             )

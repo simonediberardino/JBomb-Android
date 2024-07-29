@@ -1,9 +1,9 @@
 package com.diberardino.jbomb.network.dispatch
 
+import android.util.Log
 import com.diberardino.jbomb.network.events.process.*
 import com.diberardino.jbomb.network.models.HttpMessageTypes
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class HttpMessageReceiverHandler private constructor() {
     // Handles the behavior of each http message;

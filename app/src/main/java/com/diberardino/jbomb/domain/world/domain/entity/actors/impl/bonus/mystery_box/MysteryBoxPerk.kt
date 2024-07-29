@@ -6,7 +6,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entit
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.MysteryBox
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.logic.MysteryBoxLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.state.MysteryBoxState
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 
 class MysteryBoxPerk(

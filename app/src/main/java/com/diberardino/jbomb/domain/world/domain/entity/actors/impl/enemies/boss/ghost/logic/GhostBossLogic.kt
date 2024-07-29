@@ -1,39 +1,35 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.logic
 
+import android.util.Log
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.audio.AudioManager
-import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.events.level.behavior.GameBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.logic.BossEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.GhostBoss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ghost_enemy.GhostEnemy
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
-import com.diberardino.jbomb.utils.Utility
-import com.diberardino.jbomb.utils.dev.Log
-import com.diberardino.jbomb.utils.time.now
-import com.diberardino.jbomb.utils.ui.GradientCallbackHandler
-import java.awt.event.ActionEvent
+import com.diberardino.jbomb.ui.utilities.GradientCallbackHandler
+import com.diberardino.jbomb.utility.Utility
+import com.diberardino.jbomb.utility.now
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.function.Consumer
-import javax.swing.SwingUtilities
-import javax.swing.Timer
+import kotlin.random.Random
 
 class GhostBossLogic(override val entity: GhostBoss) : BossEntityLogic(entity = entity), IGhostBossLogic {
     override fun attackAnimationAndSoundFX() {
         if (entity.state.currRageStatus == 1)
             return
 
-        AudioManager.instance.play(SoundModel.AXE_HIT)
+        //AudioManager.instance.play(SoundModel.AXE_HIT)
         updateRageStatus(1)
 
-        val t = Timer(ATTACK_RESET_DELAY) { _: ActionEvent? ->
+        // Launch the coroutine
+        JBomb.match.scope.launch {
+            delay(ATTACK_RESET_DELAY.toLong()) // Delay for the specified reset delay
             updateRageStatus(0)
         }
-
-        t.isRepeats = false
-        t.start()
     }
 
     /**
@@ -83,10 +79,10 @@ class GhostBossLogic(override val entity: GhostBoss) : BossEntityLogic(entity = 
                     return@GradientCallbackHandler
                 }
 
-                // Create a timer to delay the execution of the show task after the object is hidden.
-                val t = Timer(INVISIBLE_DURATION) { _: ActionEvent? -> showTask.execute() }
-                t.isRepeats = false
-                t.start()
+                JBomb.match.scope.launch {
+                    delay(INVISIBLE_DURATION.toLong())
+                    showTask.execute()
+                }
             }
 
             // Start the task of gradually hiding the object.
@@ -161,25 +157,19 @@ class GhostBossLogic(override val entity: GhostBoss) : BossEntityLogic(entity = 
     }
 
     override fun performLightsAnimation() {
-        synchronized((lock1 as Any)) {
-            SwingUtilities.invokeLater {
-                val timer = Timer(0, null)
+        synchronized(lock1) {
+            JBomb.match.scope.launch {
                 var count = 0
-                timer.addActionListener { e: ActionEvent? ->
-                    val rand = (Math.random() * 10000).toInt()
+                while (count <= 5 && !JBomb.isGameEnded) {
+                    val rand = Random.nextInt(0, 10000)
                     when (count) {
-                        0, 2, 4 -> PitchPanel.turnOffLights()
-                        1, 3 -> PitchPanel.turnOnLights()
+                        //0, 2, 4 -> PitchPanel.turnOffLights()
+                        //1, 3 -> PitchPanel.turnOnLights()
                     }
-                    timer.setDelay(rand)
-                    if (count >= 5 || JBomb.isGameEnded) {
-                        PitchPanel.turnOnLights()
-                        timer.stop()
-                    }
+                    delay(rand.toLong())
                     count++
                 }
-                timer.initialDelay = 0
-                timer.start()
+                //PitchPanel.turnOnLights()
             }
         }
     }

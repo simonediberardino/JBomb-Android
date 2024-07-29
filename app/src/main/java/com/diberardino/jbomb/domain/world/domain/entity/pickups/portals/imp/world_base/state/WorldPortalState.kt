@@ -1,10 +1,9 @@
-package com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.state
+package com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.imp.world_base.state
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.base.state.PortalState
 import com.diberardino.jbomb.domain.world.domain.pickups.portals.imp.world_base.WorldPortal
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp

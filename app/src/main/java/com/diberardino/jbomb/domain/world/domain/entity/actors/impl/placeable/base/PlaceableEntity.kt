@@ -3,7 +3,6 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.b
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.movable_block.MovableBlock
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.base.state.PlaceableEntityState
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.mappers.dtoToEntityNetwork
 import com.diberardino.jbomb.network.entity.PlaceableEntityNetwork
 

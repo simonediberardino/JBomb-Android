@@ -9,7 +9,6 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destr
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destroyable_block.logic.DestroyableBlockLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destroyable_block.properties.DestroyableBlockProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destroyable_block.properties.DestroyableBlockState
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 
 class DestroyableBlock : MovableBlock {

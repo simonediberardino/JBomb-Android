@@ -1,10 +1,10 @@
 package com.diberardino.jbomb.network.events.forward
 
 import com.diberardino.jbomb.domain.events.models.HttpEvent
+import com.diberardino.jbomb.domain.world.domain.items.ItemsTypes
 import com.diberardino.jbomb.network.entity.EntityNetwork
 import com.diberardino.jbomb.network.dispatch.HttpMessageDispatcher
 import com.diberardino.jbomb.network.messages.UseItemHttpMessage
-import com.diberardino.jbomb.domain.world.domain.entity.items.ItemsTypes
 
 class UseItemHttpEventForwarder : HttpEvent {
     override fun invoke(vararg extras: Any) {

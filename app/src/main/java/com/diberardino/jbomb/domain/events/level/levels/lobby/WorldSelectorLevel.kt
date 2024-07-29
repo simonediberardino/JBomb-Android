@@ -1,10 +1,8 @@
-package com.diberardino.jbomb.domain.level.levels.lobby
+package com.diberardino.jbomb.domain.events.level.levels.lobby
 
-import com.diberardino.jbomb.data.data.DataInputOutput
-import com.diberardino.jbomb.domain.events.level.levels.lobby.IslandLevel
-import com.diberardino.jbomb.localization.Localization
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.World1Portal
 import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.World2Portal
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.World1Portal
+import com.diberardino.jbomb.localization.Localization
 
 class WorldSelectorLevel : IslandLevel() {
     override fun generateLevel() {
@@ -13,8 +11,9 @@ class WorldSelectorLevel : IslandLevel() {
     }
 
     private fun generatePortals() {
-        val lastWorldId = 1.coerceAtLeast(DataInputOutput.getInstance().lastWorldId)
+        //val lastWorldId = 1.coerceAtLeast(DataInputOutput.getInstance().lastWorldId)
 
+        val lastWorldId = 2
         val worldPortals = WORLDS_ID_TO_PORTAL
                 .filterKeys { it <= lastWorldId }
                 .values

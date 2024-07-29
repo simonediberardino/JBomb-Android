@@ -2,7 +2,7 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_enti
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.properties.BomberEntityProperties
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.graphics.RemotePlayerImageModel
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.remote_player.graphics.RemotePlayerImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.types.EntityTypes
 

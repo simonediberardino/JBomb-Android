@@ -1,8 +1,9 @@
 package com.diberardino.jbomb.domain.world.domain.geo
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
+import com.diberardino.jbomb.ui.screens.matchPanelSize
 
 enum class EnhancedDirection {
     LEFTUP, LEFTDOWN, RIGHTUP, RIGHTDOWN;

@@ -1,5 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base
 
+import android.graphics.Bitmap
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
@@ -7,11 +8,10 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.gr
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.hard_block.HardBlock
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.logic.MysteryBoxLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base.state.MysteryBoxState
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.types.EntityTypes
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
-import com.diberardino.jbomb.utils.file_system.Paths
-import java.awt.image.Bitmap
+import com.diberardino.jbomb.utility.Paths
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class MysteryBox : HardBlock(Coordinates(0, 0)) {
     abstract override val state: MysteryBoxState

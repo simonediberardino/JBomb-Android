@@ -1,12 +1,12 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics
 
-import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
+import android.graphics.Bitmap
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
+import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
-import com.diberardino.jbomb.utils.Utility
-import com.diberardino.jbomb.utils.time.now
-import java.awt.image.Bitmap
+import com.diberardino.jbomb.utility.Utility
+import com.diberardino.jbomb.utility.now
 
 open class CharacterGraphicsBehavior(open val entity: Character) : DefaultEntityGraphicsBehavior(), ICharacterGraphicsBehavior {
     override fun getImage(entity: Entity): Bitmap? {

@@ -1,14 +1,14 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics
 
 import android.graphics.Bitmap
+import android.util.Log
+import com.diberardino.jbomb.JBombApplication
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
-import com.diberardino.jbomb.utils.Utility.fileExists
-import com.diberardino.jbomb.utils.Utility.loadImage
-import com.diberardino.jbomb.utils.dev.Log
-import com.diberardino.jbomb.utils.time.now
-import java.awt.image.Bitmap
-import java.util.*
+import com.diberardino.jbomb.utility.Utility
+import com.diberardino.jbomb.utility.Utility.loadImage
+import com.diberardino.jbomb.utility.now
+import java.util.Locale
 import java.util.regex.Pattern
 
 abstract class DefaultEntityGraphicsBehavior : IEntityGraphicsBehavior {
@@ -20,22 +20,19 @@ abstract class DefaultEntityGraphicsBehavior : IEntityGraphicsBehavior {
         val extension = toks[1]
         val fileName = toks[0]
         val imagePathWithStatus = "${fileName}_${entity.state.state.toString().lowercase(Locale.getDefault())}.$extension"
-        val hasImageWithStatus = fileExists(imagePathWithStatus)
+        val hasImageWithStatus = Utility.fileExists(imagePathWithStatus)
         return if (hasImageWithStatus) doLoadAndSetImage(entity, imagePathWithStatus) else doLoadAndSetImage(entity, imagePath)
     }
 
-    private fun doLoadAndSetImage(entity: Entity, imagePath: String): Bitmap? {
+    private fun doLoadAndSetImage(entity: Entity, imagePath: String): Bitmap? = try {
         entity.state.lastImageUpdate = now()
 
-        return try {
-            loadImage(imagePath)?.let {
-                entity.image._image = loadImage(imagePath)
-                entity.image.imagePath = imagePath
-                return entity.image._image
-            }
-        } catch (exception: Exception) {
-            Log.e(this.javaClass.simpleName, "Could not load image $imagePath")
-            throw exception
+        loadImage(JBombApplication.context, imagePath).also {
+            entity.image._image = it
+            entity.image.imagePath = imagePath
         }
+    } catch (exception: Exception) {
+        Log.e(this.javaClass.simpleName, "Could not load image $imagePath")
+        throw exception
     }
 }

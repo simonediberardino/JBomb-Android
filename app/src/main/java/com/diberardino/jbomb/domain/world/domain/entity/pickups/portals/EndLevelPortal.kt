@@ -2,7 +2,7 @@ package com.diberardino.jbomb.domain.world.domain.entity.pickups.portals
 
 import android.graphics.Bitmap
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.domain.level.levels.lobby.WorldSelectorLevel
+import com.diberardino.jbomb.domain.events.level.levels.lobby.WorldSelectorLevel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior

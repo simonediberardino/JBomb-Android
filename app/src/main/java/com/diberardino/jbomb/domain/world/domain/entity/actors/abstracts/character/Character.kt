@@ -1,20 +1,21 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character
 
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import android.util.Log
 import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
-import com.diberardino.jbomb.values.DrawPriority
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.logic.ICharacterEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.MovingEntity
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.mappers.dtoToEntityNetwork
 import com.diberardino.jbomb.network.entity.EntityNetwork
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
+import com.diberardino.jbomb.values.Dimensions.DEFAULT_SIZE
+import com.diberardino.jbomb.values.Dimensions.PIXEL_UNIT
+import com.diberardino.jbomb.values.DrawPriority
 
 /**
  * Represents a character in the game, which can move and interact with the environment.
@@ -51,7 +52,7 @@ abstract class Character : MovingEntity {
     }
 
     companion object {
-        val size = PitchPanel.PIXEL_UNIT * 4 * 2
+        val size = DEFAULT_SIZE
     }
 
     internal object DEFAULT {
@@ -70,6 +71,6 @@ abstract class Character : MovingEntity {
             get() = DrawPriority.DRAW_PRIORITY_2
         val HITBOX_SIZE_TO_HEIGHT_RATIO: Float = 0.733f
         val STEP_SIZE: Int
-            get() = PitchPanel.PIXEL_UNIT
+            get() = PIXEL_UNIT
     }
 }

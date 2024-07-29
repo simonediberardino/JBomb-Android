@@ -5,10 +5,9 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal.
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.properties.CharacterEntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.domain.world.types.EntityTypes
-import com.diberardino.jbomb.utils.file_system.Paths
+import com.diberardino.jbomb.utility.Paths
 
 class FoxAnimal : AnimalEntity {
     constructor() : super()

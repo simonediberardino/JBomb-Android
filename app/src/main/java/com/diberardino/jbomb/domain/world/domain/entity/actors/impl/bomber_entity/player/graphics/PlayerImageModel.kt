@@ -2,14 +2,13 @@ package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_enti
 
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.Player
-import com.diberardino.jbomb.data.data.DataInputOutput
-import com.diberardino.jbomb.utils.file_system.Paths
+import com.diberardino.jbomb.utility.Paths
 
 class PlayerImageModel(
         entity: Player
 ) : CharacterImageModel(
         entity = entity,
-        entitiesAssetsPath = "${Paths.entitiesFolder}/player/${DataInputOutput.getInstance().skin}"
+        entitiesAssetsPath = "${Paths.entitiesFolder}/player/skin0"
 ) {
     override fun characterOrientedImages(): Array<String> {
         entity as Player

@@ -1,6 +1,5 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy
 
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
@@ -10,6 +9,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.hard_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class Enemy : Character {
     constructor(id: Long) : super(id)

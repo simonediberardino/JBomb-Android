@@ -1,5 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.logic
 
+import android.util.Log
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.events.level.behavior.GameBehavior
@@ -13,13 +14,14 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.ConfettiExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.handler.ExplosionHandler
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection
-import com.diberardino.jbomb.utils.Utility
-import com.diberardino.jbomb.utils.Utility.timePassed
-import com.diberardino.jbomb.utils.dev.Log
-import com.diberardino.jbomb.utils.time.now
+import com.diberardino.jbomb.ui.screens.matchPanelSize
+import com.diberardino.jbomb.utility.Utility
+import com.diberardino.jbomb.utility.Utility.timePassed
+import com.diberardino.jbomb.utility.now
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 class ClownLogic(
         override val entity: Clown
@@ -50,13 +52,10 @@ class ClownLogic(
     override fun onSpawn() {
         val gameBehavior: GameBehavior = object : GameBehavior() {
             override fun hostBehavior(): () -> Unit = {
-                val panelSize = JBomb
-                        .JBombFrame
-                        .pitchPanel
-                        .preferredSize
+                val panelSize = matchPanelSize
 
-                val y = panelSize.getHeight().toInt() - entity.state.size
-                val x = (panelSize.getWidth() / 2 - entity.state.size / 2).toInt()
+                val y = panelSize.height.toInt() - entity.state.size
+                val x = (panelSize.width / 2 - entity.state.size / 2).toInt()
 
                 entity.logic.move(Coordinates(x, y))
             }
@@ -74,7 +73,8 @@ class ClownLogic(
      */
     override fun spawnOrbs() {
         Direction.values().forEach { d ->
-            ClownNose(Coordinates.fromDirectionToCoordinateOnEntity(
+            ClownNose(
+                Coordinates.fromDirectionToCoordinateOnEntity(
                     entity,
                     d,
                     Orb.DEFAULT.SIZE,
@@ -89,7 +89,8 @@ class ClownLogic(
      */
     override fun spawnEnhancedOrbs() {
         EnhancedDirection.values().forEach { d ->
-            ClownNose(Coordinates.fromDirectionToCoordinateOnEntity(
+            ClownNose(
+                Coordinates.fromDirectionToCoordinateOnEntity(
                     entity,
                     d,
                     Orb.DEFAULT.SIZE

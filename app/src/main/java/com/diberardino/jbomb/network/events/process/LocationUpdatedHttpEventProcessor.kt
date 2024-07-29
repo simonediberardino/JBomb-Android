@@ -1,16 +1,15 @@
 package com.diberardino.jbomb.network.events.process
 
+import android.util.Log
 import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
-import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.mappers.dtoToEntityNetwork
 import com.diberardino.jbomb.network.dispatch.HttpMessageDispatcher
 import com.diberardino.jbomb.network.messages.LocationHttpMessage
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class LocationUpdatedHttpEventProcessor : HttpEvent {
     override fun invoke(vararg extras: Any) {

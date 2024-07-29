@@ -1,11 +1,10 @@
 package com.diberardino.jbomb.network.events.process
 
+import android.util.Log
 import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class BombExplodedEventProcessor: HttpEvent {
     override fun invoke(vararg extras: Any) {

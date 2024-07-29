@@ -1,13 +1,11 @@
 package com.diberardino.jbomb.network.events.process
 
-import com.diberardino.jbomb.domain.events.models.HttpEvent
+import android.util.Log
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.level.levels.Level
-import com.diberardino.jbomb.network.dispatch.HttpMessageDispatcher
+import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.network.gamehandler.ClientGameHandler
-import com.diberardino.jbomb.network.messages.PlayerJoinRequestHttpMessage
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class LevelInfoHttpEventProcessor : HttpEvent {
     override fun invoke(vararg extras: Any) {
@@ -28,14 +26,14 @@ class LevelInfoHttpEventProcessor : HttpEvent {
         Thread.sleep(1500) // TODO
 
         if (levelClassOpt.isPresent) {
-            JBomb.startLevel(
+            /*JBomb.startLevel(
                     level = levelClassOpt.get().getConstructor().newInstance(),
                     onlineGameHandler = onlineGameHandler,
                     disconnect = false
             ) {
                 // Client confirms joining the match after receiving the ID.
                 HttpMessageDispatcher.instance.dispatch(PlayerJoinRequestHttpMessage(id, player.toEntityNetwork()))
-            }
+            }*/
         } else {
             throw RuntimeException("Level $worldId, $levelId does not exist")
         }

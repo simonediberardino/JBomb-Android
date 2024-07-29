@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.tasks
 
-import com.diberardino.jbomb.utils.time.now
+import com.diberardino.jbomb.utility.now
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

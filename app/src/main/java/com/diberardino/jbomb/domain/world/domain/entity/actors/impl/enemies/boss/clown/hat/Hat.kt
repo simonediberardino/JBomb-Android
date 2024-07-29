@@ -1,10 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat
 
-import com.diberardino.jbomb.domain.world.types.EntityTypes
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.Orb
-import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.CharacterImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics.ICharacterGraphicsBehavior
@@ -12,8 +8,12 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entit
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.Clown
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat.logic.HatEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.hat.properties.HatEntityState
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.Orb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.clown.orb.properties.OrbEntityProperties
-import com.diberardino.jbomb.utils.file_system.Paths
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection
+import com.diberardino.jbomb.domain.world.types.EntityTypes
+import com.diberardino.jbomb.utility.Paths
 
 open class Hat : Orb {
     constructor(coordinates: Coordinates?, enhancedDirection: EnhancedDirection?) : super(coordinates, enhancedDirection) {}

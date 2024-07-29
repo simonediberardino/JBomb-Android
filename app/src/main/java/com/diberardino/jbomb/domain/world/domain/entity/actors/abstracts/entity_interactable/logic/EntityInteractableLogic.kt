@@ -1,16 +1,17 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.logic
 
-import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.events.level.behavior.GameBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.logic.EntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.EntityInteractable
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates.getNewCoordinatesListOnDirection
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates.getNewCoordinatesListOnDirection
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.network.events.forward.AttackEntityEventForwarder
-import com.diberardino.jbomb.utils.Utility.timePassed
-import com.diberardino.jbomb.utils.time.now
+import com.diberardino.jbomb.utility.Utility.timePassed
+import com.diberardino.jbomb.utility.now
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 abstract class EntityInteractableLogic(
         override val entity: EntityInteractable

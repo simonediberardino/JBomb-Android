@@ -1,6 +1,7 @@
 package com.diberardino.jbomb.network.entity
 
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+
 
 open class CharacterNetwork(
         entityId: Long,

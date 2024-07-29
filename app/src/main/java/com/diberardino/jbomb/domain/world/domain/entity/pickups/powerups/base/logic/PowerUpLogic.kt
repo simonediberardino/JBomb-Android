@@ -1,17 +1,16 @@
-package com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.logic
+package com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.base.logic
 
+import android.util.Log
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.audio.AudioManager
-import com.diberardino.jbomb.audio.SoundModel
 import com.diberardino.jbomb.domain.tasks.observer.Observable2
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_interactable.logic.EntityInteractableLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import com.diberardino.jbomb.utils.dev.Log
-import java.util.*
+import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.logic.IPowerUpLogic
+import java.util.Timer
+import java.util.TimerTask
 
 abstract class PowerUpLogic(
         override val entity: PowerUp
@@ -32,8 +31,7 @@ abstract class PowerUpLogic(
 
         doApply(player)
 
-        val matchPanel = JBomb.JBombFrame.matchPanel
-        AudioManager.instance.play(SoundModel.POWERUP)
+        //AudioManager.instance.play(SoundModel.POWERUP)
 
         player.logic.onPowerupApply(entity)
 
@@ -43,7 +41,7 @@ abstract class PowerUpLogic(
         player.state.activePowerUps.add(entity.javaClass)
 
         if (entity.state.isDisplayable)
-            matchPanel.refreshPowerUps(player.state.activePowerUps)
+            JBomb.match.refreshPowerUpsUi(player.state.activePowerUps)
 
         val durationMillis: Long = entity.state.duration * 1000L
 
@@ -60,7 +58,7 @@ abstract class PowerUpLogic(
                 player.state.temporaryActivePowerUps.remove(entity.javaClass)
 
                 if (entity.state.isDisplayable)
-                    matchPanel.refreshPowerUps(player.state.activePowerUps)
+                    JBomb.match.refreshPowerUpsUi(player.state.activePowerUps)
 
                 cancel(player)
             }

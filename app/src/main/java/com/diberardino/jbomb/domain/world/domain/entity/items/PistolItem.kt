@@ -1,20 +1,22 @@
-package com.diberardino.jbomb.domain.world.domain.items
+package com.diberardino.jbomb.domain.world.domain.entity.items
 
+import com.diberardino.jbomb.domain.events.game.UpdateCurrentAvailableItemsEvent
+import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
+import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destroyable_block.DestroyableBlock
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.hard_block.HardBlock
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion.Companion.SIZE
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.PistolExplosion
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
-import com.diberardino.jbomb.domain.events.game.UpdateCurrentAvailableItemsEvent
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion.Companion.SIZE
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.handler.ExplosionHandler
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.Explosive
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.items.ItemsTypes
+import com.diberardino.jbomb.domain.world.domain.items.UsableItem
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.PistolPowerUp
-import com.diberardino.jbomb.utils.file_system.Paths.itemsPath
-import com.diberardino.jbomb.utils.Utility.timePassed
-import com.diberardino.jbomb.utils.time.now
+import com.diberardino.jbomb.utility.Paths.itemsPath
+import com.diberardino.jbomb.utility.Utility.timePassed
+import com.diberardino.jbomb.utility.now
 
 class PistolItem : UsableItem(), Explosive {
     private var bullets = 5

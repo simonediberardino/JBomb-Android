@@ -8,7 +8,6 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.destroyable_block.DestroyableBlock
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.hard_block.HardBlock
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bomb.Bomb
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 
 abstract class EntityInteractable : Entity {
     abstract override val logic: IEntityInteractableLogic

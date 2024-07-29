@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.logic
 
+import android.util.Log
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.audio.AudioManager
 import com.diberardino.jbomb.domain.events.level.behavior.LocationChangedBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
@@ -9,17 +9,18 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.entity_
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.moving_entity.logic.MovingEntityLogic
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
+import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Direction
 import com.diberardino.jbomb.input.Command
 import com.diberardino.jbomb.network.events.forward.CustomUpdateInfoEventForwarder
 import com.diberardino.jbomb.network.models.HttpMessageTypes
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
-import com.diberardino.jbomb.utils.Utility
-import com.diberardino.jbomb.utils.dev.Log
-import com.diberardino.jbomb.utils.time.now
-import java.awt.event.ActionEvent
-import java.util.*
+import com.diberardino.jbomb.utility.Utility
+import com.diberardino.jbomb.utility.now
+import com.diberardino.jbomb.values.Dimensions.PIXEL_UNIT
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.util.Timer
+import java.util.TimerTask
 import kotlin.math.max
 
 abstract class CharacterEntityLogic(
@@ -65,8 +66,8 @@ abstract class CharacterEntityLogic(
 
     override fun onStep() {
         val stepSound = entity.properties.stepSound
-        if (stepSound != null)
-            AudioManager.instance.play(stepSound, false)
+        //if (stepSound != null)
+            //AudioManager.instance.play(stepSound, false)
     }
 
     /**
@@ -195,17 +196,15 @@ abstract class CharacterEntityLogic(
 
     override fun onEliminated() {
         entity.state.canMove = false
-        AudioManager.instance.play(entity.properties.deathSound)
+        //AudioManager.instance.play(entity.properties.deathSound)
 
-        // Create a Timer object to schedule the animation iterations
-        val timer = javax.swing.Timer(EntityInteractable.INTERACTION_DELAY_MS.toInt()) { _: ActionEvent? ->
+        // Launch the coroutine
+        JBomb.match.scope.launch {
+            delay(EntityInteractable.INTERACTION_DELAY_MS.toLong()) // Delay for the specified interaction delay
             onEndedDeathAnimation()
             entity.logic.despawn()
             entity.logic.notifyDespawn()
         }
-
-        timer.isRepeats = false
-        timer.start()
     }
 
     override fun onEndedDeathAnimation() {}
@@ -261,7 +260,7 @@ abstract class CharacterEntityLogic(
         val oppositeBlocksCoordinates = Coordinates.getNewCoordinatesListOnDirection(
                 /* position = */ entity.info.position,
                 /* d = */ command.commandToDirection(),
-                /* steps = */ PitchPanel.PIXEL_UNIT,
+                /* steps = */ PIXEL_UNIT,
                 /* offset = */ Character.DEFAULT.SIZE,
                 /* size = */ Character.DEFAULT.SIZE
         )
@@ -273,13 +272,13 @@ abstract class CharacterEntityLogic(
     override fun overpassBlock(entitiesOpposite1: List<Entity>, entitiesOpposite2: List<Entity>, direction1: Direction, direction2: Direction) {
         val oppositeCommand1 = direction2.toCommand()
         val oppositeCommand2 = direction1.toCommand()
-        val controllerManager = JBomb.match.controllerManager ?: return
+        //val controllerManager = JBomb.match.controllerManager ?: return
 
-        val doubleClick1 = controllerManager.isCommandPressed(oppositeCommand1)
-        val doubleClick2 = controllerManager.isCommandPressed(oppositeCommand2)
+        //val doubleClick1 = controllerManager.isCommandPressed(oppositeCommand1)
+        //val doubleClick2 = controllerManager.isCommandPressed(oppositeCommand2)
 
-        if (doubleClick2 || doubleClick1)
-            return
+        //if (doubleClick2 || doubleClick1)
+        //return
 
         // If the first direction has no obstacles and the second does, and the second direction is not double-clicked, move in the second direction.
         if (entitiesOpposite1.isNotEmpty()

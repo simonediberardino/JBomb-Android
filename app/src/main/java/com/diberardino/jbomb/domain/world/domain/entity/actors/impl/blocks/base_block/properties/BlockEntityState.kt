@@ -1,9 +1,9 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.base_block.properties
 
-import com.diberardino.jbomb.presentation.ui.panels.game.PitchPanel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityState
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
+import com.diberardino.jbomb.values.Dimensions.GRID_SIZE
 
 open class BlockEntityState(
     entity: Entity,

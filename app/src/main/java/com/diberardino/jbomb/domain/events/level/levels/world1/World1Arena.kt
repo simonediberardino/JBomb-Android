@@ -1,17 +1,17 @@
-package com.diberardino.jbomb.domain.level.levels.world1
+package com.diberardino.jbomb.domain.events.level.levels.world1
 
+import com.diberardino.jbomb.domain.events.level.info.model.DefaultArenaLevelInfo
+import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
+import com.diberardino.jbomb.domain.events.level.levels.ArenaLevel
+import com.diberardino.jbomb.domain.events.level.levels.Level
+import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.base.Boss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.boss.ghost.GhostBoss
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.helicopter.Helicopter
+import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.skeleton.SkeletonEnemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.tank.TankEnemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.yellow_ball.YellowBall
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.zombie.Zombie
-import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
-import com.diberardino.jbomb.domain.events.level.levels.ArenaLevel
-import com.diberardino.jbomb.domain.events.level.levels.Level
-import com.diberardino.jbomb.domain.events.level.info.model.DefaultArenaLevelInfo
-import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
-import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.skeleton.SkeletonEnemy
 
 class World1Arena : ArenaLevel() {
     override val info: LevelInfo

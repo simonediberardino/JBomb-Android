@@ -8,9 +8,9 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IE
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.items.PistolItem
+import com.diberardino.jbomb.domain.world.domain.entity.items.PistolItem
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
-import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.logic.PowerUpLogic
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.base.logic.PowerUpLogic
 import com.diberardino.jbomb.domain.world.types.EntityTypes
 import com.diberardino.jbomb.localization.Localization
 import com.diberardino.jbomb.utility.Paths.itemsPath

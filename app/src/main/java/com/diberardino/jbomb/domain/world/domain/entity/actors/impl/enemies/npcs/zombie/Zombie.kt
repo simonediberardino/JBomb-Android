@@ -7,9 +7,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.charact
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.ai_enemy.AiEnemy
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.enemies.npcs.zombie.properties.ZombieState
-import com.diberardino.jbomb.domain.world.domain.geo.Coordinates
 import com.diberardino.jbomb.domain.world.types.EntityTypes
-import com.diberardino.jbomb.utils.file_system.Paths.enemiesFolder
+import com.diberardino.jbomb.utility.Paths.enemiesFolder
 
 class Zombie : AiEnemy {
     constructor() : super()

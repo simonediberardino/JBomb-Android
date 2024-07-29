@@ -34,7 +34,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.RemoteC
 import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.SpeedPowerUp
 import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.TransparentBombsPowerUp
 import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.TransparentDestroyableBlocksPowerUp
-import com.diberardino.jbomb.domain.world.domain.pickups.portals.World1Portal
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.portals.World1Portal
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.PistolPowerUp
 import com.diberardino.jbomb.domain.world.types.EntityTypes
 import com.diberardino.jbomb.network.gamehandler.ClientGameHandler

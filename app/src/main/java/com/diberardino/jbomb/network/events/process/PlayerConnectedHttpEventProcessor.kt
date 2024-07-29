@@ -1,12 +1,11 @@
 package com.diberardino.jbomb.network.events.process
 
-import com.diberardino.jbomb.domain.events.models.HttpEvent
+import android.util.Log
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.remote_player.RemotePlayer
 import com.diberardino.jbomb.network.events.forward.SpawnEntityEventForwarder
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class PlayerConnectedHttpEventProcessor : HttpEvent {
     override fun invoke(vararg extras: Any) {
@@ -19,7 +18,7 @@ class PlayerConnectedHttpEventProcessor : HttpEvent {
         val match = JBomb.match
         val coordinates = match.currentLevel.info.playerSpawnCoordinates
 
-        JBomb.match.resumeIfPaused()
+        //JBomb.match.resumeIfPaused()
 
         match.getEntities().forEach { e ->
             Log.i(this.javaClass.simpleName, "Sending entity $e to $clientId")
