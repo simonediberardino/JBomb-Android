@@ -66,4 +66,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.google.guava:guava:21.0")
+
+    // Exclude listenablefuture from all dependencies
+    configurations.all {
+        exclude(group = "com.google.guava", module = "listenablefuture")
+    }
 }

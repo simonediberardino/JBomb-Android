@@ -1,15 +1,14 @@
 package com.diberardino.jbomb.network.events.process
 
+import android.util.Log
 import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.JBomb
-import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.types.EntityTypes
 import com.diberardino.jbomb.mappers.toEntity
 import com.diberardino.jbomb.network.gamehandler.ClientGameHandler
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
 
 class SpawnedEntityHttpEventProcessor : HttpEvent {
     override fun invoke(vararg extras: Any) {

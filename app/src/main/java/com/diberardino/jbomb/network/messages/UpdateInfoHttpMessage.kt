@@ -1,11 +1,12 @@
 package com.diberardino.jbomb.network.messages
 
+import android.util.Log
 import com.diberardino.jbomb.network.entity.EntityNetwork
 import com.diberardino.jbomb.network.models.HttpActor
 import com.diberardino.jbomb.network.models.HttpMessage
 import com.diberardino.jbomb.network.models.HttpMessageTypes
-import com.diberardino.jbomb.utils.dev.Extensions.toMap
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.toMap
+
 
 class UpdateInfoHttpMessage(
         private val entityNetwork: EntityNetwork? = null,

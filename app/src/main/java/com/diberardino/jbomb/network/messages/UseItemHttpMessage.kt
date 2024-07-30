@@ -4,7 +4,7 @@ import com.diberardino.jbomb.network.entity.EntityNetwork
 import com.diberardino.jbomb.network.models.HttpActor
 import com.diberardino.jbomb.network.models.HttpMessage
 import com.diberardino.jbomb.network.models.HttpMessageTypes
-import com.diberardino.jbomb.domain.world.domain.entity.items.ItemsTypes
+
 import com.diberardino.jbomb.domain.world.domain.items.ItemsTypes
 
 class UseItemHttpMessage(private val userDao: EntityNetwork, private val itemType: ItemsTypes, private val itemId: Long) : HttpMessage {

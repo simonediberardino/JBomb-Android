@@ -1,7 +1,8 @@
 package com.diberardino.jbomb.network.sockets
 
+import android.util.Log
 import com.diberardino.jbomb.network.callbacks.TCPClientCallback
-import com.diberardino.jbomb.utils.dev.Log
+
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel

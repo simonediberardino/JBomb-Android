@@ -1,10 +1,11 @@
 package com.diberardino.jbomb.network.events.process
 
+import android.util.Log
 import com.diberardino.jbomb.domain.events.models.HttpEvent
 import com.diberardino.jbomb.domain.events.game.UpdateLocalEnemiesCountGameEvent
-import com.diberardino.jbomb.domain.events.models.HttpEvent
-import com.diberardino.jbomb.utils.dev.Extensions.getOrTrim
-import com.diberardino.jbomb.utils.dev.Log
+import com.diberardino.jbomb.utility.Extensions.getOrTrim
+
+
 
 class UpdateEnemiesCountEventProcessor : HttpEvent {
     override fun invoke(vararg extras: Any) {

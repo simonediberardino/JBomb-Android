@@ -4,7 +4,7 @@ import com.diberardino.jbomb.network.entity.EntityNetwork
 import com.diberardino.jbomb.network.models.HttpActor
 import com.diberardino.jbomb.network.models.HttpMessage
 import com.diberardino.jbomb.network.models.HttpMessageTypes
-import com.diberardino.jbomb.utils.dev.Extensions.toMap
+import com.diberardino.jbomb.utility.Extensions.toMap
 
 class SpawnedEntityHttpMessage(private val entity: EntityNetwork, private val extras: Map<String, String> = hashMapOf()): HttpMessage {
     override fun serialize(): MutableMap<String, String> {

@@ -1,11 +1,11 @@
 package com.diberardino.jbomb.network.gamehandler
 
-import com.diberardino.jbomb.JBomb
+import android.util.Log
 import com.diberardino.jbomb.network.callbacks.TCPClientCallback
 import com.diberardino.jbomb.network.dispatch.HttpMessageReceiverHandler
 import com.diberardino.jbomb.network.serializing.HttpParserSerializer
 import com.diberardino.jbomb.network.sockets.TCPClient
-import com.diberardino.jbomb.utils.dev.Log
+
 
 /**
  * Handles communication with the game server from the client-side using TCP.
@@ -43,7 +43,7 @@ class ClientGameHandler(
      */
     override fun onError(message: String?) {
         connected = false
-        JBomb.networkError(message)
+        //JBomb.networkError(message)
     }
 
     /**
