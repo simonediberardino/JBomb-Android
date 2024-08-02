@@ -13,7 +13,7 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.placeable.bo
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
 import com.diberardino.jbomb.domain.world.domain.items.ItemsTypes
 import com.diberardino.jbomb.domain.world.domain.items.UsableItem
-import com.diberardino.jbomb.domain.world.domain.pickups.powerups.PistolPowerUp
+import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.PistolPowerUp
 import com.diberardino.jbomb.utility.Paths.itemsPath
 import com.diberardino.jbomb.utility.Utility.timePassed
 import com.diberardino.jbomb.utility.now

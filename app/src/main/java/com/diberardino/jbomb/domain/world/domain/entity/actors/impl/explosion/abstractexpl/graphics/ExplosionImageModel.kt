@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.graphics
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityImageModel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
@@ -11,7 +11,7 @@ class ExplosionImageModel(
     paddingTop: Int = Entity.DEFAULT.PADDING_TOP,
     paddingWidth: Int = Entity.DEFAULT.PADDING_WIDTH,
     imageRefreshRate: Int = AbstractExplosion.DEFAULT.IMAGE_REFRESH_RATE,
-    _image: Bitmap? = Entity.DEFAULT.IMAGE,
+    _image: ImageBitmap? = Entity.DEFAULT.IMAGE,
     lastImageIndex: Int = Entity.DEFAULT.LAST_IMAGE_INDEX,
     lastImageUpdate: Long = Entity.DEFAULT.LAST_IMAGE_UPDATE,
     imagePath: String = Entity.DEFAULT.IMAGE_PATH,

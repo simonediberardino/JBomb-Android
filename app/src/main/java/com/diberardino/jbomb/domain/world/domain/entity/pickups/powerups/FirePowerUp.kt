@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.domain.events.game.ExplosionLengthPowerUpEvent
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
@@ -9,8 +9,8 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.gr
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion.Companion.MAX_EXPLOSION_LENGTH
 import com.diberardino.jbomb.domain.world.domain.entity.geo.Coordinates
-import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 import com.diberardino.jbomb.domain.world.domain.entity.pickups.powerups.base.logic.PowerUpLogic
+import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.PowerUp
 import com.diberardino.jbomb.domain.world.domain.pickups.powerups.base.state.PowerUpState
 import com.diberardino.jbomb.domain.world.types.EntityTypes
 import com.diberardino.jbomb.localization.Localization
@@ -21,7 +21,7 @@ class FirePowerUp : PowerUp {
     constructor(coordinates: Coordinates?) : super(coordinates)
 
     override val graphicsBehavior: IEntityGraphicsBehavior = object : DefaultEntityGraphicsBehavior() {
-        override fun getImage(entity: Entity): Bitmap? = loadAndSetImage(entity, "$powerUpsFolder/fire_up.png")
+        override fun getImage(entity: Entity): ImageBitmap? = loadAndSetImage(entity, "$powerUpsFolder/fire_up.png")
     }
 
     override val logic: PowerUpLogic = object : PowerUpLogic(entity = this) {

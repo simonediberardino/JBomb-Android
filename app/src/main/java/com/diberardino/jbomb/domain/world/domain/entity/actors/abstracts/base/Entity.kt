@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.models.RunnablePar
 import com.diberardino.jbomb.domain.tasks.GameTickerObserver
@@ -96,7 +96,7 @@ open class EntityImageModel(
     var paddingTop: Int = Entity.DEFAULT.PADDING_TOP,
     var paddingWidth: Int = Entity.DEFAULT.PADDING_WIDTH,
     val imageRefreshRate: Int = Entity.DEFAULT.IMAGE_REFRESH_RATE,
-    var _image: Bitmap? = Entity.DEFAULT.IMAGE,
+    var _image: ImageBitmap? = Entity.DEFAULT.IMAGE,
     var lastImageIndex: Int = Entity.DEFAULT.LAST_IMAGE_INDEX,
     var lastImageUpdate: Long = Entity.DEFAULT.LAST_IMAGE_UPDATE,
     var imagePath: String = Entity.DEFAULT.IMAGE_PATH
@@ -125,8 +125,8 @@ open class EntityImageModel(
 }
 
 interface IEntityGraphicsBehavior {
-    fun loadAndSetImage(entity: Entity, imagePath: String): Bitmap?
-    fun getImage(entity: Entity): Bitmap?
+    fun loadAndSetImage(entity: Entity, imagePath: String): ImageBitmap?
+    fun getImage(entity: Entity): ImageBitmap?
 
     fun getHitboxSizeToHeightRatio(entity: Entity, path: String): Float {
         return entity.image.hitboxSizeToHeightRatio

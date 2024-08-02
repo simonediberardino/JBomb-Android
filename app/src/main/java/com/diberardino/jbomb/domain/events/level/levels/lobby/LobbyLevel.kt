@@ -2,7 +2,7 @@ package com.diberardino.jbomb.domain.level.levels.lobby
 
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.level.gamehandler.imp.DefaultGameHandler
-import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
+import com.diberardino.jbomb.domain.events.level.gamehandler.model.GameHandler
 import com.diberardino.jbomb.domain.events.level.levels.StoryLevel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.player.Player
 

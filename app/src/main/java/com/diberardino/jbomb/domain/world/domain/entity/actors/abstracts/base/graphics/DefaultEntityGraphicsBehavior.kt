@@ -1,7 +1,7 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics
 
-import android.graphics.Bitmap
 import android.util.Log
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.JBombApplication
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
@@ -12,7 +12,7 @@ import java.util.Locale
 import java.util.regex.Pattern
 
 abstract class DefaultEntityGraphicsBehavior : IEntityGraphicsBehavior {
-    override fun loadAndSetImage(entity: Entity, imagePath: String): Bitmap? {
+    override fun loadAndSetImage(entity: Entity, imagePath: String): ImageBitmap? {
         if (entity.state.state == null)
             return doLoadAndSetImage(entity, imagePath)
 
@@ -24,9 +24,10 @@ abstract class DefaultEntityGraphicsBehavior : IEntityGraphicsBehavior {
         return if (hasImageWithStatus) doLoadAndSetImage(entity, imagePathWithStatus) else doLoadAndSetImage(entity, imagePath)
     }
 
-    private fun doLoadAndSetImage(entity: Entity, imagePath: String): Bitmap? = try {
+    private fun doLoadAndSetImage(entity: Entity, imagePath: String): ImageBitmap? = try {
         entity.state.lastImageUpdate = now()
 
+        Log.e(this.javaClass.simpleName, "Setting image $imagePath")
         loadImage(JBombApplication.context, imagePath).also {
             entity.image._image = it
             entity.image.imagePath = imagePath

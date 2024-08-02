@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,9 +21,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level1
 import com.diberardino.jbomb.ui.composable.control.Joystick
-import com.diberardino.jbomb.ui.composable.control.loadImageFromAssets
 import com.diberardino.jbomb.ui.theme.paddingScreenDevice
+import com.diberardino.jbomb.ui.viewmodel.JBombMatchViewModel
+import com.diberardino.jbomb.ui.viewmodel.JBombMatchViewModelFactory
+import com.diberardino.jbomb.utility.Utility.loadImage
 import com.diberardino.jbomb.values.Dimension
 
 
@@ -79,17 +85,22 @@ fun MatchScreen() {
 
 @Composable
 fun GamePitchWithBorders() {
+    val factory = JBombMatchViewModelFactory(World1Level1(), null)
+    val viewModel: JBombMatchViewModel = viewModel(factory = factory)
+
     val context = LocalContext.current
+
+    val gameState by viewModel.gameState.collectAsState()
 
     // Load images from assets
     val topBorderImage =
-        remember { loadImageFromAssets(context, "worlds/0/common/images/border_3.png") }
+        remember { loadImage(context, gameState.borderImages[3]!!) }
     val bottomBorderImage =
-        remember { loadImageFromAssets(context, "worlds/0/common/images/border_1.png") }
+        remember { loadImage(context, gameState.borderImages[1]!!) }
     val leftBorderImage =
-        remember { loadImageFromAssets(context, "worlds/0/common/images/border_0.png") }
+        remember { loadImage(context, gameState.borderImages[0]!!) }
     val rightBorderImage =
-        remember { loadImageFromAssets(context, "worlds/0/common/images/border_2.png") }
+        remember { loadImage(context, gameState.borderImages[2]!!) }
 
     Box(
         modifier = Modifier
@@ -109,7 +120,8 @@ fun GamePitchWithBorders() {
             Row(
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxSize())
+                    .fillMaxSize()
+            )
             {
                 Image(
                     bitmap = leftBorderImage,
@@ -128,6 +140,18 @@ fun GamePitchWithBorders() {
                             matchPanelSize = Dimension(newSize.width, newSize.height)
                         }
                 ) {
+                    gameState.levelInfo?.pitchImagePath?.let {
+                        Box(modifier = Modifier.fillMaxSize()) {
+                            Image(
+                                bitmap = loadImage(context, it),
+                                contentDescription = null,
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+
+                            GamePitch(viewModel)
+                        }
+                    }
                 }
 
 

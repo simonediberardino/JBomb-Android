@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bonus.mystery_box.base
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.IEntityGraphicsBehavior
@@ -18,7 +18,7 @@ abstract class MysteryBox : HardBlock(Coordinates(0, 0)) {
     abstract override val logic: MysteryBoxLogic
 
     override val graphicsBehavior: IEntityGraphicsBehavior = object : DefaultEntityGraphicsBehavior() {
-        override fun getImage(entity: Entity): Bitmap? {
+        override fun getImage(entity: Entity): ImageBitmap? {
             return loadAndSetImage(entity, "${Paths.powerUpsFolder}/box_${state.status.toString().lowercase()}.png")
         }
     }

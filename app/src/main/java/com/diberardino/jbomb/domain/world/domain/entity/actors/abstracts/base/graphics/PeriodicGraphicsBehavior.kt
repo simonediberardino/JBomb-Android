@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.utility.Utility
@@ -10,7 +10,7 @@ abstract class PeriodicGraphicsBehavior: DefaultEntityGraphicsBehavior() {
     abstract val imagesCount: Int
     abstract val allowUiState: Boolean
 
-    override fun getImage(entity: Entity): Bitmap? {
+    override fun getImage(entity: Entity): ImageBitmap? {
         // Check if enough time has passed for an image refresh
         if (Utility.timePassed(entity.state.lastImageUpdate) < entity.image.imageRefreshRate) {
             return entity.image._image!!

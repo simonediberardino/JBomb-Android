@@ -1,12 +1,12 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.graphics
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.explosion.abstractexpl.AbstractExplosion
 
 class ExplosionGraphicsBehavior : DefaultEntityGraphicsBehavior() {
-    override fun getImage(entity: Entity): Bitmap?{
+    override fun getImage(entity: Entity): ImageBitmap?{
         entity as AbstractExplosion
         val imageName = when (entity.state.distanceFromExplosive) {
             0 -> {

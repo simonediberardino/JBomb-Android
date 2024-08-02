@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.graphics
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.graphics.DefaultEntityGraphicsBehavior
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.character.Character
@@ -9,7 +9,7 @@ import com.diberardino.jbomb.utility.Utility
 import com.diberardino.jbomb.utility.now
 
 open class CharacterGraphicsBehavior(open val entity: Character) : DefaultEntityGraphicsBehavior(), ICharacterGraphicsBehavior {
-    override fun getImage(entity: Entity): Bitmap? {
+    override fun getImage(entity: Entity): ImageBitmap? {
         return if (entity.image._image != null) {
             entity.image._image
         } else {

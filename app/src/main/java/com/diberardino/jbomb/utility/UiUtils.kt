@@ -1,16 +1,12 @@
 package com.diberardino.jbomb.utility
 
 import android.content.Context
-import android.graphics.BitmapFactory
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
-class UiUtils {
-    @Composable
-    fun LoadImageFromAssets(context: Context, fileName: String): androidx.compose.ui.graphics.ImageBitmap {
-        val assetManager = context.assets
-        val inputStream = assetManager.open(fileName)
-        val bitmap = BitmapFactory.decodeStream(inputStream)
-        return bitmap.asImageBitmap()
+object UiUtils {
+    fun pxToDp(px: Float, context: Context): Dp {
+        val density = context.resources.displayMetrics.density
+        return (px / density).dp
     }
 }

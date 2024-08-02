@@ -1,6 +1,5 @@
 package com.diberardino.jbomb.domain.events.level.gamehandler.imp
 
-import android.graphics.Bitmap
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.JBombApplication
 import com.diberardino.jbomb.domain.events.level.behavior.DespawnDestroyableBlocksBehavior
@@ -11,8 +10,8 @@ import com.diberardino.jbomb.domain.events.level.behavior.SpawnAnimalsBehavior
 import com.diberardino.jbomb.domain.events.level.behavior.SpawnBossBehavior
 import com.diberardino.jbomb.domain.events.level.behavior.SpawnEnemiesBehavior
 import com.diberardino.jbomb.domain.events.level.behavior.SpawnMysteryBoxBehavior
+import com.diberardino.jbomb.domain.events.level.gamehandler.model.GameHandler
 import com.diberardino.jbomb.domain.events.level.levels.Level
-import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.animal.AnimalEntity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.enemy.Enemy
 import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.bomber_entity.base.BomberEntity
@@ -20,13 +19,13 @@ import com.diberardino.jbomb.domain.world.domain.entity.actors.impl.models.State
 import com.diberardino.jbomb.utility.Utility
 
 open class DefaultGameHandler(level: Level) : GameHandler(level) {
-    override val borderImages: Array<Bitmap?>
+    override val borderImages: Array<String?>
         get() {
             val SIDES = 4
-            val pitch = arrayOfNulls<Bitmap>(SIDES)
+            val pitch = arrayOfNulls<String>(SIDES)
             for (i in 0 until SIDES) {
                 val path = level.fileSystemHandler.getImageForCurrentLevel("border_$i.png")
-                pitch[i] = Utility.loadImage(JBombApplication.context, path)
+                pitch[i] = Utility.loadImageGetPath(JBombApplication.context, path)
             }
             return pitch
         }

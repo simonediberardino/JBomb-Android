@@ -27,10 +27,10 @@ object Paths {
 
     @JvmStatic
     val dataFile: String get() = "data"
-    private val assetsFolder: String get() = "assets"
+    private val assetsFolder: String get() = ""
 
     @JvmStatic
-    val entitiesFolder: String get() = "$assetsFolder/entities"
+    val entitiesFolder: String get() = "entities"
 
     @JvmStatic
     val enemiesFolder: String get() = String.format("%s/enemies", entitiesFolder)
@@ -39,7 +39,7 @@ object Paths {
     val animalsFolder: String get() = String.format("%s/animals", entitiesFolder)
 
     @JvmStatic
-    val worldsFolder: String get() = "$assetsFolder/worlds"
+    val worldsFolder: String get() = "worlds"
 
     @JvmStatic
     val currentLevelFolder: String
@@ -52,7 +52,7 @@ object Paths {
     val currentWorldCommonFolder: String get() = "$worldsFolder/${JBomb.match.currentLevel!!.info.worldId}/common"
 
     @JvmStatic
-    val powerUpsFolder: String get() = "$assetsFolder/powerups"
+    val powerUpsFolder: String get() = "powerups"
 
     @JvmStatic
     val powerUpsBorderPath: String get() = "$menuImagesPath/powerups_border.png"
@@ -69,24 +69,24 @@ object Paths {
 
     @JvmStatic
     fun getWorldSelectorPortalPath(id: Int): String {
-        return "$assetsFolder/world_selector/world$id/world$id%format%.png"
+        return "world_selector/world$id/world$id%format%.png"
     }
 
     @JvmStatic
     val powerupsLogoPath: String get() = "$powerUpsFolder/powerups_logo.png"
 
     @JvmStatic
-    val inventoryPath: String get() = "$assetsFolder/inventory"
+    val inventoryPath: String get() = "inventory"
 
     @JvmStatic
-    val soundsPath: String get() = "$assetsFolder/sounds"
+    val soundsPath: String get() = "sounds"
 
     @JvmStatic
-    val itemsPath: String get() = "$assetsFolder/items"
+    val itemsPath: String get() = "items"
 
     @JvmStatic
-    val defaultSoundTrack: String get() = "$assetsFolder/menu/sound/soundtrack.wav"
-    private val uiFolder: String get() = "$assetsFolder/ui"
+    val defaultSoundTrack: String get() = "menu/sound/soundtrack.wav"
+    private val uiFolder: String get() = "ui"
 
     @JvmStatic
     val cursorPath: String get() = "$uiFolder/cursor.png"

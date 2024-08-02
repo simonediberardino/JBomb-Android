@@ -9,7 +9,7 @@ import com.diberardino.jbomb.domain.events.level.gamehandler.imp.DefaultGameHand
 import com.diberardino.jbomb.domain.events.level.info.model.LevelInfo
 import com.diberardino.jbomb.domain.level.eventhandler.imp.DefaultLevelEventHandler
 import com.diberardino.jbomb.domain.level.eventhandler.model.LevelEventHandler
-import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
+import com.diberardino.jbomb.domain.events.level.gamehandler.model.GameHandler
 import com.diberardino.jbomb.domain.events.level.levels.lobby.WorldSelectorLevel
 import com.diberardino.jbomb.domain.events.level.levels.world1.World1Arena
 import com.diberardino.jbomb.domain.events.level.levels.world1.World1Level1

@@ -5,6 +5,8 @@ import static com.diberardino.jbomb.values.Dimensions.COMMON_DIVISOR;
 import static com.diberardino.jbomb.values.Dimensions.GRID_SIZE;
 import static com.diberardino.jbomb.values.Dimensions.PIXEL_UNIT;
 
+import android.util.Log;
+
 import com.diberardino.jbomb.JBomb;
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity;
 import com.diberardino.jbomb.domain.world.domain.geo.EnhancedDirection;
@@ -90,6 +92,7 @@ public class Coordinates implements Comparable<Coordinates> {
     }
 
     public static Coordinates roundCoordinates(Coordinates coords, Coordinates offset) {
+        Log.e("roundCoordinates", String.valueOf(GRID_SIZE));
         return new Coordinates(((coords.getX() / GRID_SIZE) * GRID_SIZE + offset.getX()), ((coords.getY() / GRID_SIZE) * GRID_SIZE + offset.getY()));
     }
 

@@ -10,7 +10,7 @@ class JBombApplication : Application() {
     }
 
     override fun onCreate() {
-        super.onCreate()
         context = this
+        super.onCreate()
     }
 }

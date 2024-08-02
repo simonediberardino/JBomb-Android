@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.actors.impl.blocks.stone_block
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.EntityProperties
@@ -18,7 +18,7 @@ class StoneBlock : HardBlock {
     override val properties: EntityProperties = BlockEntityProperties(type = EntityTypes.StoneBlock)
 
     override val graphicsBehavior: IEntityGraphicsBehavior = object : DefaultEntityGraphicsBehavior() {
-        override fun getImage(entity: Entity): Bitmap? {
+        override fun getImage(entity: Entity): ImageBitmap? {
             return loadAndSetImage(
                     entity = entity,
                     imagePath = JBomb.match.currentLevel!!.info.stoneBlockImagePath

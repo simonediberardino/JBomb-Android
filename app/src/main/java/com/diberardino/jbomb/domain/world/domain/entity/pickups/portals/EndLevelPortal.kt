@@ -1,6 +1,6 @@
 package com.diberardino.jbomb.domain.world.domain.entity.pickups.portals
 
-import android.graphics.Bitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import com.diberardino.jbomb.JBomb
 import com.diberardino.jbomb.domain.events.level.levels.lobby.WorldSelectorLevel
 import com.diberardino.jbomb.domain.world.domain.entity.actors.abstracts.base.Entity
@@ -19,7 +19,7 @@ class EndLevelPortal : Portal {
     constructor(coordinates: Coordinates?) : super(coordinates)
 
     override val graphicsBehavior: IEntityGraphicsBehavior = object : DefaultEntityGraphicsBehavior() {
-        override fun getImage(entity: Entity): Bitmap? {
+        override fun getImage(entity: Entity): ImageBitmap? {
             return loadAndSetImage(entity = entity, imagePath = "$powerUpsFolder/end_game.gif")
         }
     }

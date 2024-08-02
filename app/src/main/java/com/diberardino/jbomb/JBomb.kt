@@ -13,4 +13,8 @@ object JBomb {
             val currentLevel = match.currentLevel
             return match.gameState && currentLevel.info.worldId >= 0
         }
+
+    fun startMatch(match: JBombMatch) {
+        this.match = match
+    }
 }

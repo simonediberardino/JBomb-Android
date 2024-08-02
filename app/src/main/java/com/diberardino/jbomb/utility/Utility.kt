@@ -1,10 +1,11 @@
 package com.diberardino.jbomb.utility
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.DisplayMetrics
 import android.util.Log
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
 import com.diberardino.jbomb.JBombApplication
 import com.diberardino.jbomb.data.cache.Cache
 import com.diberardino.jbomb.values.Dimension
@@ -51,6 +52,7 @@ object Utility {
         val width: Int = displayMetrics.widthPixels
         val height: Int = displayMetrics.heightPixels
 
+        Log.e("ScreenSize", "$width x $height")
         return@run Dimension(width, height)
     }
 
@@ -63,10 +65,10 @@ object Utility {
 
     fun px(dim: Int): Int = px(dim.toDouble()).toInt()
 
-    fun px(dim: Double): Double = dim * (screenSize.width / Dimensions.DEFAULT_SCREEN_SIZE.width)
+    fun px(dim: Double): Double = dim * (screenSize.width.toFloat() / Dimensions.DEFAULT_SCREEN_SIZE.width.toFloat())
 
 
-    fun loadImage(context: Context, fileName: String): Bitmap {
+    fun loadImage(context: Context, fileName: String): ImageBitmap {
         var fileName = fileName
         val cache = Cache.instance
 
@@ -76,9 +78,8 @@ object Utility {
 
         // Adjust fileName if necessary
         fileName = fileName.replace("/src", "")
-        Log.i(this.javaClass.simpleName, "Loading $fileName")
 
-        val image: Bitmap = try {
+        val image = try {
             context.assets.open(fileName).use { inputStream ->
                 BitmapFactory.decodeStream(inputStream) ?: throw RuntimeException()
             }
@@ -86,9 +87,27 @@ object Utility {
             throw RuntimeException("Failed to load image: $fileName", e)
         }
 
-        cache.saveInCache(fileName, image)
-        return image
+        cache.saveInCache(fileName, image.asImageBitmap())
+        return image.asImageBitmap()
     }
+
+    fun loadImageGetPath(context: Context, fileName: String): String {
+        var fileName = fileName
+
+        // Adjust fileName if necessary
+        fileName = fileName.replace("/src", "")
+
+        val imagePath = try {
+            context.assets.open(fileName).use { inputStream ->
+                fileName
+            }
+        } catch (e: Exception) {
+            throw RuntimeException("Failed to load image: $fileName", e)
+        }
+
+        return imagePath
+    }
+
 
     fun fileExists(filePath: String): Boolean = try {
         JBombApplication.context.assets.open(filePath).use {

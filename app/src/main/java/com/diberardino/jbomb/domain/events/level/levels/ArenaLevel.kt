@@ -10,7 +10,7 @@ import com.diberardino.jbomb.domain.events.level.gamehandler.imp.DefaultGameHand
 import com.diberardino.jbomb.domain.events.level.info.model.DefaultArenaLevelInfo
 import com.diberardino.jbomb.domain.level.eventhandler.imp.DefaultLevelEventHandler
 import com.diberardino.jbomb.domain.level.eventhandler.model.LevelEventHandler
-import com.diberardino.jbomb.domain.level.gamehandler.model.GameHandler
+import com.diberardino.jbomb.domain.events.level.gamehandler.model.GameHandler
 import com.diberardino.jbomb.localization.Localization
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
